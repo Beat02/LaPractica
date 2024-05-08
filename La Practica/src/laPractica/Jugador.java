@@ -40,12 +40,11 @@ public class Jugador {
      * @return si es false es que NO está repetido, si es TRUE es que SI está repetido
      */
     public boolean jugadorRepetido(String nombre) {
-        //TODO: falta importar la lista de jugadores y meterla en el arrayList
         Jugador nuevoJugador = new Jugador(nombre);
 
         Path rutaFichero = Paths.get("RankingJugadores.txt");
         List<String> listaJugadores = new ArrayList<>();
-
+        //TODO: idealmente convertir los string en Jugadores para seguridad metodo
         try {
             listaJugadores = Files.readAllLines(Paths.get(rutaFichero.toUri()));
         } catch (Exception e) {
