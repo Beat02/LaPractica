@@ -9,4 +9,6 @@ public class Constante {
     //
     public static final int maxJugagores = 4;
     //
+    public static final String ranking="RankingJugadores.txt";
+    public static final String registrados="JugadoresRegistrado.txt";
 }

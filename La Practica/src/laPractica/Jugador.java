@@ -11,6 +11,7 @@ public class Jugador {
     private final String nombre;
     private int puntuacion;
 
+
     public Jugador(String nombre) {
         this.nombre = nombre;
         this.puntuacion = 0;
@@ -36,26 +37,25 @@ public class Jugador {
     }
 
     /**
-     * @param nombre
+     *
      * @return si es false es que NO está repetido, si es TRUE es que SI está repetido
      */
     public boolean jugadorRepetido(String nombre) {
         Jugador nuevoJugador = new Jugador(nombre);
-
         Path rutaFichero = Paths.get("RankingJugadores.txt");
-        List<String> listaJugadores = new ArrayList<>();
-        //TODO: idealmente convertir los string en Jugadores para seguridad metodo
-        try {
-            listaJugadores = Files.readAllLines(Paths.get(rutaFichero.toUri()));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        List<Jugador> listaJugadores = Ranking.cargarJugadoresDesdeArchivo("RankingJugadores.txt");
         boolean mismoJugador = false;
         if (!listaJugadores.isEmpty()) {
             int i = 0;
             while (!mismoJugador && i < listaJugadores.size()) {
-                mismoJugador = nuevoJugador.getNombre().equals(listaJugadores.get(i));
+                mismoJugador = nuevoJugador.equals(listaJugadores.get(i));
                 i++;
+            }
+            if (!mismoJugador) {
+                System.out.println("El jugador no se encuentra en la base de datos, vamos a añadirlo");
+            }
+            if (mismoJugador) {
+                System.out.println("Este jugador ya se encuentra en el registro");
             }
         }
         return mismoJugador;
@@ -72,5 +72,10 @@ public class Jugador {
     @Override
     public int hashCode() {
         return Objects.hashCode(nombre);
+    }
+
+    @Override
+    public String toString() {
+        return nombre + "," + puntuacion + "\n";
     }
 }

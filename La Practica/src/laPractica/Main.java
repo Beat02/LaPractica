@@ -44,9 +44,13 @@ public class Main {
             int i = 0;
             while (i < totalJugadorHumano) {
                 System.out.println("Ahora necesito que me des el nombre de los jugadores humanos:" + '\n' +
-                        "NOMBRE JUGADOR 1:");
+                        "NOMBRE JUGADOR:");
                 Jugador jugador1 = new Jugador(teclado.next());
                 //TODO: implementar metodo Ranking jugadorRepetido()
+                boolean jugadorRepetido= jugador1.jugadorRepetido(jugador1.getNombre());
+                if (!jugadorRepetido){
+                    //añadir jugador al array de ranking
+                }
 
 
             }
