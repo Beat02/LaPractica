@@ -41,7 +41,7 @@ public class Ranking {
         List<Jugador> listaJugadores = new ArrayList<>();
         Path rutaFichero = Path.of(rutaArchivo);
 
-        try {
+        try {//TODO: revisar para entender mejor
             List<String> lineas = Files.readAllLines(rutaFichero, StandardCharsets.UTF_8);
             for (String linea : lineas) {
                 String[] datos = linea.split(",");

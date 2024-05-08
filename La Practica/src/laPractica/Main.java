@@ -47,8 +47,8 @@ public class Main {
                         "NOMBRE JUGADOR:");
                 Jugador jugador1 = new Jugador(teclado.next());
                 //TODO: implementar metodo Ranking jugadorRepetido()
-                boolean jugadorRepetido= jugador1.jugadorRepetido(jugador1.getNombre());
-                if (!jugadorRepetido){
+                boolean jugadorRepetido = jugador1.jugadorRepetido(jugador1.getNombre());
+                if (!jugadorRepetido) {
                     //añadir jugador al array de ranking
                 }
 
@@ -57,20 +57,31 @@ public class Main {
 
 
         }
+        if (totalJugadorMaquina > 0) {
+            for (int i = 0; i < totalJugadorMaquina; i++) {
+                Maquina pcu = new Maquina();
+                boolean repetido = pcu.nombreRepetido(arrayJugadores);
+                while (repetido) {
+                    String nuevoName = pcu.nuevoNombre();
+                    pcu.setNombre(nuevoName);
+                    repetido = pcu.nombreRepetido(arrayJugadores);
+                }
+                arrayJugadores.add(pcu);
+            }
+        }
 
-        System.out.println("Hay cuatro tipos de rondas,¿cuál quires jugar?" +
-                '\n' + "Tipo 1. Partida rápida (3 rondas)" +
-                '\n' + "Tipo 2. Partida corta (5 rondas)" +
-                '\n' + "Tipo 3. Partida normal (10 rondas)" +
-                '\n' + "Tipo 4. Partida larga (20 rondas)" + '\n' + "Escoge qué tipo quieres jugar: ");
-        int tipoRonda = teclado.nextInt();
-        int y = 0;
         //imprimir orden aleatorio
         Partida.imprimirOrdenAleatorio(arrayJugadores);
+        //rondas
+        System.out.println("Perfecto, ya sabemos los jugadores");
+        Ronda ronda=new Ronda();
+        int numRondas=ronda.numRondas();
+        for (int i = 0; i < numRondas; i++) {
 
-        while (y < tipoRonda) {
 
         }
+
+
 
 
     }

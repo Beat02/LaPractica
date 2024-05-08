@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Jugador {
-    private final String nombre;
+    protected String nombre;
     private int puntuacion;
 
 
@@ -29,6 +29,7 @@ public class Jugador {
     public void setPuntuacion(int puntuacion) {
         this.puntuacion = puntuacion;
     }
+
 
     public void actualizarContador(int resultadoPartida) {
         int puntuacionPreviaPartida = this.getPuntuacion();
