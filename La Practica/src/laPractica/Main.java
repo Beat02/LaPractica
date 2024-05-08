@@ -5,7 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +21,7 @@ public class Main {
                 "El total de jugadores posible es cuatro, y de esos cuatro, puedes escoger cuantos son humanos y cuantos son máquinas" + '\n'
                 + "¿Cuántos jugadores humanos habrá en esta partida?");
 
-        int maxJugagores = 4;//TODO: para la clase Constante
+        int maxJugagores = Constante.maxJugagores;
         int totalJugadoresPartidaActual = 0;
         int totalJugadorMaquina = 0;
         ArrayList<Jugador> arrayJugadores = new ArrayList<>();
@@ -47,14 +49,28 @@ public class Main {
                 //TODO: implementar metodo Ranking jugadorRepetido()
 
 
-
-
             }
 
 
         }
-        System.out.println("");
+
+        System.out.println("Hay cuatro tipos de rondas,¿cuál quires jugar?" +
+                '\n' + "Tipo 1. Partida rápida (3 rondas)" +
+                '\n' + "Tipo 2. Partida corta (5 rondas)" +
+                '\n' + "Tipo 3. Partida normal (10 rondas)" +
+                '\n' + "Tipo 4. Partida larga (20 rondas)" + '\n' + "Escoge qué tipo quieres jugar: ");
+        int tipoRonda = teclado.nextInt();
+        int y = 0;
+        //imprimir orden aleatorio
+        Partida.imprimirOrdenAleatorio(arrayJugadores);
+
+        while (y < tipoRonda) {
+
+        }
 
 
     }
+
+
 }
+
