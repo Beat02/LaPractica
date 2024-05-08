@@ -71,7 +71,8 @@ public class Main {
         }
 
         //imprimir orden aleatorio
-        Partida.imprimirOrdenAleatorio(arrayJugadores);
+        Partida partida=new Partida();
+        partida.imprimirOrdenAleatorio(arrayJugadores);
         //rondas
         System.out.println("Perfecto, ya sabemos los jugadores");
         Ronda ronda=new Ronda();

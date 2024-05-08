@@ -22,7 +22,7 @@ public class JugadorTest {
     static Jugador nuevoJugador;
 
     @BeforeAll
-    static void crearInstanciaSistemaVenta() {
+    static void crearInstanciaJugador() {
         System.out.println("ANTES DE TODOS LOS TESTS");
         nuevoJugador = new Jugador("Yoasabi");
     }

@@ -9,7 +9,7 @@ public class RankingTest {
     static Ranking rankingPrueba;
 
     @BeforeAll
-    static void crearInstanciaSistemaVenta() {
+    static void crearInstanciaRanking() {
         System.out.println("ANTES DE TODOS LOS TESTS");
         rankingPrueba = new Ranking();
     }
