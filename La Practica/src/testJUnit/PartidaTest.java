@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class PartidaTest {
     static Partida partidaPrueba;
@@ -34,6 +35,27 @@ public class PartidaTest {
         arrayJugador.add(jug2);
         arrayJugador.add(jug3);
         partidaPrueba.imprimirOrdenAleatorio(arrayJugador);
+    }
+    @Test
+    @DisplayName("comprobar historico actualizado correctamente")
+    void actualizarHistorico(){
+        Map<String, Integer> datos=partidaPrueba.getMapaJugadores();
+        datos.put("PACO",5);
+        datos.put("KRIS",3);
+        datos.put("LUCIA",9);
+        partidaPrueba.setMapaJugadores(datos);
+        partidaPrueba.actualizarHistorico();
+    }
+    @Test
+    @DisplayName("comprobar historico actualizado correctamente")
+    void imprimirGanador(){
+        Map<String, Integer> datos=partidaPrueba.getMapaJugadores();
+        datos.put("PACO",5);
+        datos.put("KRIS",3);
+        datos.put("LUCIA",9);
+        partidaPrueba.setMapaJugadores(datos);
+        partidaPrueba.ganadorPartida();
+
     }
 
 }

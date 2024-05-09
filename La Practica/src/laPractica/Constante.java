@@ -11,6 +11,7 @@ public class Constante {
     //
     public static final String ranking="RankingJugadores.txt";
     public static final String registrados="JugadoresRegistrado.txt";
+    public static final String historico="HistoricoPartidas.txt";
     //
     public static final String pcu1="Ada_Lovelace";
     public static final String pcu2="Hypatia";

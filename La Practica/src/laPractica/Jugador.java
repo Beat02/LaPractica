@@ -81,6 +81,6 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return nombre + "," + puntuacion + "\n";
+        return nombre + "," + puntuacion;
     }
 }
