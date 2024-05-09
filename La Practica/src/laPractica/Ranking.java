@@ -19,7 +19,13 @@ public class Ranking {
         this.ranking = new ArrayList<>();
         this.listaJugRegistrados=new ArrayList<>();
     }
-    public void imprimirJugadoresRegistrados(int opcion){
+
+    /**
+     *
+     * @param opcion(dependiendo si quieren imprimir el ranking, el historico o la lista de jugadores)
+     * @
+     */
+    public void imprimirListaJugadores(int opcion){
         if (opcion==1){
             Path path=Paths.get(Constante.registrados);
             try {
@@ -37,6 +43,12 @@ public class Ranking {
         }
 
     }
+
+    /**
+     *
+     * @param rutaArchivo
+     * @return ArrayList<Jugador> importado desde RankingJugadores.txt
+     */
     public static List<Jugador> cargarJugadoresDesdeArchivo(String rutaArchivo) {
         List<Jugador> listaJugadores = new ArrayList<>();
         Path rutaFichero = Path.of(rutaArchivo);

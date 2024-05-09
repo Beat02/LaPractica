@@ -9,6 +9,14 @@ public class Maquina extends Jugador {
         super(nombreAleatorio());
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * @apiNote le da un nombre alearorio al jugador máquina
+     * @return nombre de la máquina
+     */
     public static String nombreAleatorio() {
         ArrayList<String> nombres = new ArrayList<>();
         nombres.add(Constante.pcu1);
@@ -20,10 +28,11 @@ public class Maquina extends Jugador {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
+    /**
+     *
+     * @param listaJugadores
+     * @return si es true, el nombre ya está siendo usado en la partida
+     */
     public boolean nombreRepetido(ArrayList<Jugador> listaJugadores) {
         boolean repetido = false;
         int i = 0;
@@ -34,9 +43,13 @@ public class Maquina extends Jugador {
         return repetido;
     }
 
+    /**
+     *
+     * @return nombre para la máquina si en algún momento se ha repetido
+     */
     public String nuevoNombre() {
         Maquina maquina = new Maquina();
-        boolean repetido=true;
+        boolean repetido = true;
         while (repetido) {
             repetido = nombre.equals(maquina.getNombre());
         }

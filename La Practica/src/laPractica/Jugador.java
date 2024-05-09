@@ -31,6 +31,10 @@ public class Jugador {
     }
 
 
+    /**
+     * @apiNote metodo para actualizar el contador de los jugadores tras una partida
+     * @param resultadoPartida
+     */
     public void actualizarContador(int resultadoPartida) {
         int puntuacionPreviaPartida = this.getPuntuacion();
         int puntuacionActualizada = puntuacionPreviaPartida + resultadoPartida;

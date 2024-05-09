@@ -22,7 +22,7 @@ public class RankingTest {
     @Test
     @DisplayName("comprobar que se imprime correctamente")
     void imprimirJugadoresRegistrados() {
-        rankingPrueba.imprimirJugadoresRegistrados(2);
+        rankingPrueba.imprimirListaJugadores(2);
     }
 
 }
