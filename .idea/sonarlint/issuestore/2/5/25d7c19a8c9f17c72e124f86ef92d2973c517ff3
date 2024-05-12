@@ -1,25 +1,24 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅJ$c3762cf3-8d1d-4ad8-bf7d-6ab3f6ab33f4
-o
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅJ$fc13a025-abd0-4458-bd51-e285ad49b8b0
+•
 java:S3776
-"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Çµí‘8ÂĞ“âö1
-\
-java:S1854"?Remove this useless assignment to local variable "rutaFichero".(ñ„ÙŠ8ÄĞ“âö1
-M
-java:S1481"0Remove this unused "rutaFichero" local variable.(ñ„ÙŠ8ÔĞ“âö1
-L	java:S106"+Replace this use of System.out by a logger.(´àöÌıÿÿÿÿ8ØĞ“âö1
-T
-java:S6126"2Replace this String concatenation with Text block.(´àöÌıÿÿÿÿ8ÙĞ“âö1
-G	java:S106"+Replace this use of System.out by a logger.(Î«Ç˜8âĞ“âö1
-G	java:S106 "+Replace this use of System.out by a logger.(”Ì×ƒ8çĞ“âö1
-L	java:S106#"+Replace this use of System.out by a logger.(Í£ˆ¤şÿÿÿÿ8ñĞ“âö1
-T
-java:S1135$"2Complete the task associated to this TODO comment.(¥Ğâîûÿÿÿÿ8÷Ğ“âö1
-F	java:S106'"+Replace this use of System.out by a logger.(òÄ™8úĞ“âö1
-T
-java:S1135&"2Complete the task associated to this TODO comment.(õĞ“¿şÿÿÿÿ8üĞ“âö1
-L	java:S106+"+Replace this use of System.out by a logger.(±µÒÖşÿÿÿÿ8€Ñ“âö1
-O
-java:S1135."2Complete the task associated to this TODO comment.(ãÍÙÍ8„Ñ“âö1
-G	java:S106J"+Replace this use of System.out by a logger.(æ¬›‚8Ñ“âö1
-i	java:S108M")Either remove or fill this block of code.(ÿ°ô–şÿÿÿÿJ$382480a6-1fa9-4452-889c-0e58ae9480fb
+"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Çµí‘8ÂĞ“âö1J$c1f0742e-0b43-4a1a-abc0-788d721ce90b
+‚
+java:S1854"?Remove this useless assignment to local variable "rutaFichero".(ñ„ÙŠ8ÄĞ“âö1J$c974c052-4e62-4ada-9958-c79c8c35ae4d
+s
+java:S1481"0Remove this unused "rutaFichero" local variable.(ñ„ÙŠ8ÔĞ“âö1J$2db6bedf-a1b3-4151-96c8-e8d301fd2ef3
+r	java:S106"+Replace this use of System.out by a logger.(´àöÌıÿÿÿÿ8ØĞ“âö1J$2257fe6d-c078-40b9-ba58-a40acb08ada2
+z
+java:S6126"2Replace this String concatenation with Text block.(´àöÌıÿÿÿÿ8ÙĞ“âö1J$3697472d-c097-4581-b056-5f7df2a99ea2
+m	java:S106"+Replace this use of System.out by a logger.(Î«Ç˜8âĞ“âö1J$71c925ad-1ef1-4b28-88e1-6c45a0f240a1
+m	java:S106 "+Replace this use of System.out by a logger.(”Ì×ƒ8çĞ“âö1J$8d9973bb-a9fe-4134-848f-4bfd24824601
+r	java:S106#"+Replace this use of System.out by a logger.(Í£ˆ¤şÿÿÿÿ8ñĞ“âö1J$21a0a9c2-e8c9-4463-8679-e9d4f75a3bbb
+z
+java:S1135$"2Complete the task associated to this TODO comment.(¥Ğâîûÿÿÿÿ8÷Ğ“âö1J$4151ca9c-e4c7-481a-b90f-b69e17de8b3d
+l	java:S106'"+Replace this use of System.out by a logger.(òÄ™8úĞ“âö1J$4ea5a1ac-153e-461d-bd2f-15b1d56a1eb8
+z
+java:S1135&"2Complete the task associated to this TODO comment.(õĞ“¿şÿÿÿÿ8üĞ“âö1J$9c315fcc-06b5-4cc0-b09d-c458fed014ed
+r	java:S106+"+Replace this use of System.out by a logger.(±µÒÖşÿÿÿÿ8€Ñ“âö1J$da8be148-8b2c-469e-859b-76b8f66aa18a
+u
+java:S1135."2Complete the task associated to this TODO comment.(ãÍÙÍ8„Ñ“âö1J$e11f871b-0c0d-48f9-a253-317b48c3a560
+m	java:S106J"+Replace this use of System.out by a logger.(æ¬›‚8Ñ“âö1J$850955e2-6cdf-4276-bdd6-775dd0c328f9

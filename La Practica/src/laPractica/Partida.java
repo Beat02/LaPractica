@@ -101,6 +101,7 @@ public class Partida {
         puntuacionFinalPartida();
         ganadorPartida();
         actualizarHistorico();
+
     }
 
 }
