@@ -12,11 +12,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Persona extends Jugador implements Ficheros {
+    private final Path rutaRegistrados=Paths.get(Constante.registrados);
     public Persona(String nombre) {
         super(nombre);
     }
 
     public int menuJugador() throws IOException {
+        if (!Files.exists(rutaRegistrados)){
+            Files.createFile(rutaRegistrados);
+        }
         Scanner teclado = new Scanner(System.in);
         int opcionMenu;
         int valorMinimo = 1;

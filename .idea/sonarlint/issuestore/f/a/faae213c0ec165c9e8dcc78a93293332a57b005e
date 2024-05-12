@@ -1,16 +1,16 @@
 
-	java:S112<"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢¨Çéö1J$9cb62727-2515-45cd-b443-3e6c71651389
-	java:S112C"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢¨Çéö1J$e0575ea1-e812-49cb-b433-92452be207f4
-	java:S112I"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢¨Çéö1J$ac4619ac-8035-4071-9ce8-dcebb017c8d5
+	java:S112<"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢¨Çéö1J$22dc6eae-b21f-49d1-bed2-138edfffc67b
+	java:S112C"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢¨Çéö1J$0c18d2b0-e133-4bd7-848b-7931d4e2d89f
+	java:S112I"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢¨Çéö1J$17d9575d-7cce-4469-94e1-6353da597375
 ³
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ËãÈê8¥¨Çéö1J$d0f53f0b-4a2c-4b7d-a5fd-653777b0af2c
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ËãÈê8¥¨Çéö1J$d3547655-586b-4a7a-a585-05176e47b4b4
 ±
-java:S1319+"nThe type of "arrayJugadores" should be an interface such as "List" rather than the implementation "ArrayList".(¶·Ñ£8¥¨Çéö1J$4979fbf2-6590-4698-8f4c-fa344ab629c3
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅ8¨¨Çéö1J$629927b9-45f8-4257-9331-ec0740ad31a3
-r	java:S106-"+Replace this use of System.out by a logger.(Åó¥ÿÿÿÿÿ8À¨Çéö1J$90b09785-5f7a-471f-ad07-512ffb2d4bae
-m	java:S106/"+Replace this use of System.out by a logger.(Ó©Õ8À¨Çéö1J$37e9da63-9017-4e82-93fb-c9cf2cb8c941
-r	java:S106P"+Replace this use of System.out by a logger.(‹ÿ ûÿÿÿÿ8Ì¨Çéö1J$f75be548-7cfa-4295-b3ba-1602db28c456
+java:S1319+"nThe type of "arrayJugadores" should be an interface such as "List" rather than the implementation "ArrayList".(¶·Ñ£8¥¨Çéö1J$b8783bb3-687b-4cea-a6e0-308741ae0eda
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅ8¨¨Çéö1J$faf5bdc9-8cc4-488e-95df-9ff2407882eb
+r	java:S106-"+Replace this use of System.out by a logger.(Åó¥ÿÿÿÿÿ8À¨Çéö1J$9078864c-48e8-4d00-8832-9e9a420818f0
+m	java:S106/"+Replace this use of System.out by a logger.(Ó©Õ8À¨Çéö1J$5a23be54-b7f1-47a4-a857-664c3750293c
+r	java:S106P"+Replace this use of System.out by a logger.(‹ÿ ûÿÿÿÿ8Ì¨Çéö1J$b10a504c-63c7-4d87-a676-365f05a70117
 z
-java:S6126P"2Replace this String concatenation with Text block.(‹ÿ ûÿÿÿÿ8Í¨Çéö1J$32db6c62-257a-4ed5-94f9-721b5b5fc3b8
-r	java:S106j"+Replace this use of System.out by a logger.(ÃÚÜÉûÿÿÿÿ8Ï¨Çéö1J$bb98ed85-dc06-44a3-b61a-f4037f791d71
-l	java:S106n"+Replace this use of System.out by a logger.(á›\8Ğ¨Çéö1J$905e0b67-230d-4c89-9781-6c04cc80d8c6
+java:S6126P"2Replace this String concatenation with Text block.(‹ÿ ûÿÿÿÿ8Í¨Çéö1J$be377b95-52e6-4e3b-8462-22a4649f87fe
+r	java:S106j"+Replace this use of System.out by a logger.(ÃÚÜÉûÿÿÿÿ8Ï¨Çéö1J$1afed218-6638-44e6-9aed-2bee91e11609
+l	java:S106n"+Replace this use of System.out by a logger.(á›\8Ğ¨Çéö1J$203cb47d-df7b-40b8-b9d7-1d8edc4fc4d7

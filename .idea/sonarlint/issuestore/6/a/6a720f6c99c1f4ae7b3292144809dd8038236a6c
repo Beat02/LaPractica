@@ -1,8 +1,31 @@
 
-†	java:S112."FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$17b5c3b1-01d2-4ec8-8ecb-f38824f38f36
-†	java:S1129"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$3291315b-4c09-45c4-9bdd-e73532e9852b
-†	java:S112H"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$53b485dc-c296-49c1-808b-c65a1dc7340d
-†	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$f59d74d5-f6b1-4248-9f26-a214f6ea234c
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô¯¬J$78e1601e-4254-4cf0-9bcf-4fac47cb41bc
-k	java:S106"+Replace this use of System.out by a logger.(‰òÚ¡úÿÿÿÿJ$e27103a5-d9ab-4c62-86d9-4a2d126d0091
-f	java:S106!"+Replace this use of System.out by a logger.(ÂŞà´J$75ce86f9-0974-47e6-b5fc-75c8ffe7f57e
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô¯¬8ëÏ”óö1J$0753edf7-405c-4314-971e-5570547034b6
+|
+java:S1118":Add a private constructor to hide the implicit public one.(´¥¡W8ôÏ”óö1J$36c1b981-700e-4a0f-a96c-45ba067b86e6
+r	java:S106"+Replace this use of System.out by a logger.(‰òÚ¡úÿÿÿÿ8÷Ï”óö1J$e858ce70-7134-470a-9da5-31d2d8ab110e
+m	java:S106!"+Replace this use of System.out by a logger.(ÂŞà´8øÏ”óö1J$edda6a64-3bf3-4c3b-92d7-33e221ff2291
+~	java:S125&"<This block of commented-out lines of code should be removed.(ñâî¶8ùÏ”óö1J$76fd2d61-71e1-44ed-a1e6-8cc6b045040e
+d
+java:S1128"GRemove this unused import 'org.junit.jupiter.params.ParameterizedTest'.(…²üî8½­¹õö1
+e
+java:S1128"HRemove this unused import 'org.junit.jupiter.params.provider.CsvSource'.(“İú™8½­¹õö1
+_
+java:S1128	"=Remove this unused import 'org.junit.jupiter.api.Assertions'.(âè¨ùÿÿÿÿ8½­¹õö1
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8½­¹õö1
+[
+java:S1128">Remove this unused import 'java.nio.charset.StandardCharsets'.(ï˜ŞÛ8¾­¹õö1
+M
+java:S1128"0Remove this unused import 'java.nio.file.Files'.(‚ƒü8¾­¹õö1
+L
+java:S1128"/Remove this unused import 'java.nio.file.Path'.(×²êÂ8¾­¹õö1
+M
+java:S1128"0Remove this unused import 'java.nio.file.Paths'.(áè°¯8¾­¹õö1
+Z
+java:S1128"=Remove this unused import 'java.nio.file.StandardOpenOption'.(¸ ÅÎ8¾­¹õö1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¾­¹õö1
+a
+java:S1128"DRemove this unused import 'java.nio.file.StandardOpenOption.APPEND'.(š¶Ù­8¾­¹õö1
+k
+java:S1128"IRemove this unused import 'org.junit.jupiter.api.Assertions.assertFalse'.(÷©Ğøÿÿÿÿ8¾­¹õö1

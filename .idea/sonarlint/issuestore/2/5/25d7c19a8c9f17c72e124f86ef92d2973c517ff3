@@ -1,27 +1,22 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷ÝÅ8Êóçéö1J$99b617cd-0e89-43ba-bb53-2b044c4ccda3
-•
-java:S3776
-"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Çµí‘8Ñóçéö1J$12077701-19a8-41fb-8546-2f8d731e454a
-‚
-java:S1854"?Remove this useless assignment to local variable "rutaFichero".(ñ„ÙŠ8Òóçéö1J$550cfccd-e4db-432c-bf8e-07bb348048ea
-s
-java:S1481"0Remove this unused "rutaFichero" local variable.(ñ„ÙŠ8Úóçéö1J$6363c2bf-8852-4cfe-af99-d75f7c242a2e
-r	java:S106"+Replace this use of System.out by a logger.(´àöÌýÿÿÿÿ8Ûóçéö1J$3c5a6eb3-57ab-4c2a-ae3d-d5c9d14d0470
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷ÝÅ8Ø²‡õö1J$2b2725a9-3bd5-4f17-9ae8-34c5133f814c
+~	java:S125"<This block of commented-out lines of code should be removed.(ïü®Š8˜³‡õö1J$6085c4d9-91d8-4c1a-ba25-7b2ecbfc7d49
 z
-java:S6126"2Replace this String concatenation with Text block.(´àöÌýÿÿÿÿ8Üóçéö1J$c7d259de-00a9-4225-a67b-b449eb2306a3
-m	java:S106"+Replace this use of System.out by a logger.(Î«Ç˜8Ýóçéö1J$9508daaf-6628-4b11-ae97-26e01a215731
-m	java:S106 "+Replace this use of System.out by a logger.(”Ì×ƒ8Þóçéö1J$ab262c32-6566-4f9e-9128-2d6e4e6a7bbe
-r	java:S106#"+Replace this use of System.out by a logger.(Í£ˆ¤þÿÿÿÿ8Þóçéö1J$1e8e96aa-43fd-4d37-992b-7f096651b34f
+java:S1135&"2Complete the task associated to this TODO comment.(¥Ðâîûÿÿÿÿ8š³‡õö1J$ec694a1d-4444-49da-a1e5-7b6e26d5f68f
 z
-java:S1135$"2Complete the task associated to this TODO comment.(¥Ðâîûÿÿÿÿ8àóçéö1J$b41afab6-2924-441d-a2cf-a114f0eadd4e
-l	java:S106'"+Replace this use of System.out by a logger.(òÄ™8àóçéö1J$b9964e2d-b499-47a6-bbe4-55f18dd94fda
-z
-java:S1135&"2Complete the task associated to this TODO comment.(õÐ“¿þÿÿÿÿ8àóçéö1J$96c1ef60-eec4-42a1-bcde-34b43e6d413f
-r	java:S106+"+Replace this use of System.out by a logger.(±µÒÖþÿÿÿÿ8àóçéö1J$3bc47900-c53a-447b-8485-f4834d49da27
+java:S1135("2Complete the task associated to this TODO comment.(õÐ“¿þÿÿÿÿ8š³‡õö1J$2c7c0c7f-3a9b-42a0-b2f5-de29a8a77b24
 u
-java:S1135."2Complete the task associated to this TODO comment.(ãÍÙÍ8áóçéö1J$312f925f-145f-4904-8cde-ef4f8558e4fa
+java:S11350"2Complete the task associated to this TODO comment.(ãÍÙÍ8š³‡õö1J$8420db69-5717-40d4-9e17-f8d496076442
 z
-java:S1135E"2Complete the task associated to this TODO comment.(ž Øªÿÿÿÿÿ8ª¡êéö1J$367e9f1d-fd29-46bd-a5bd-2ece78a858c0
-m	java:S106M"+Replace this use of System.out by a logger.(æ¬›‚8Ó ëéö1J$c5246203-cb2e-48f8-b997-769ad31d1690
-r	java:S106Y"+Replace this use of System.out by a logger.(—–„µúÿÿÿÿ8‘Ðïéö1J$a0f2a3d0-8cf8-496e-bb10-59e990d4f4af
+java:S1135I"2Complete the task associated to this TODO comment.(ž Øªÿÿÿÿÿ8š³‡õö1J$848daf03-49a0-43db-bdc4-c07d0e404c1e
+y
+java:S6880P"6Replace the chain of if/else with a switch expression.(„¢Ð…8ž³‡õö1J$a2828d1f-864e-4eb5-b1f4-b0d1138a9b13
+m	java:S106S"+Replace this use of System.out by a logger.(æ¬›‚8Ÿ³‡õö1J$dfd9208c-6f9f-4368-b931-46d4b020a909
+r	java:S106_"+Replace this use of System.out by a logger.(È¥Êýÿÿÿÿ8£³‡õö1J$68f6c9ab-9cd1-4b6c-ac95-36d9561aa8a5
+r	java:S106f"+Replace this use of System.out by a logger.(—–„µúÿÿÿÿ8¤³‡õö1J$08431120-64e0-4ca5-9962-7303f1809121
+r
+java:S1128"/Remove this unused import 'java.nio.file.Path'.(×²êÂ8¥³‡õö1J$6f206f21-a912-447e-a66d-5201e38e404e
+s
+java:S1128"0Remove this unused import 'java.nio.file.Paths'.(áè°¯8¦³‡õö1J$47fe1b82-23de-45fd-8ebe-9b26aca8b1d6
+v
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8¦³‡õö1J$332f9313-6483-476a-896a-56d172a64ee8
