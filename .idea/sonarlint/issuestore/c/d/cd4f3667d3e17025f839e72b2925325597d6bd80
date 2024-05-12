@@ -1,2 +1,9 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ρχέΕJ$082c1cc8-7cef-4240-ae94-803a75507297
+	java:S1126"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8‡™μφ1J$cce1071f-ba36-46be-9c23-e90cc58b6a96
+	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ρχέΕ8™μφ1J$5f19a161-82bf-42ba-bff2-b42565a87484
+m	java:S106"+Replace this use of System.out by a logger.(Γ–®8³™μφ1J$61f71ed5-5013-4659-9ae1-8b8a8bbf3a64
+u
+java:S6126"2Replace this String concatenation with Text block.(Γ–®8΄™μφ1J$a0c7097d-4de3-461e-919f-b44ea467ab7c
+r	java:S106"+Replace this use of System.out by a logger.(ΠΨ¶†όÿÿÿÿ8Ή™μφ1J$bd4c9e02-94db-4512-8259-247da1023dce
+i	java:S131 ""Add a default case to this switch.(—ΰ¦Οόÿÿÿÿ8¶™μφ1J$01c09015-8e80-48a9-af32-0eae78f132cb
+m	java:S1064"+Replace this use of System.out by a logger.(Ζύ8Η μφ1J$16360efd-8c01-451e-a663-c850e1e64afd

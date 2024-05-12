@@ -81,7 +81,7 @@ public class Main {
                     ronda.jugarRonda(arrayJugadores);
                 }
                 partida.endGame();
-                partida.menuIncial();
+                opcionJugador=partida.menuIncial();
             }
 
 
