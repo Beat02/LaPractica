@@ -1,8 +1,12 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅJ$22d0ba0b-c7f8-4e81-acb7-06c2ff096062
-‚
-java:S18542"?Remove this useless assignment to local variable "rutaFichero".(ñ„ÙŠ8ĞÁâö1J$24bd3018-ad69-4422-b015-6d10f244f02e
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅJ$0b783d7b-ed8f-429b-8a3c-498b3bdcc28d
 s
-java:S14812"0Remove this unused "rutaFichero" local variable.(ñ„ÙŠ8¢ĞÁâö1J$2b6e8c2e-b970-4a15-93f3-69e643e046bc
-m	java:S106<"+Replace this use of System.out by a logger.(¿Ö«×8ºĞÁâö1J$e01fc767-8fb2-4713-8c17-fa9c9ed66cb3
-m	java:S106?"+Replace this use of System.out by a logger.(œŞ•8»ĞÁâö1J$6ba7fbbe-c6b0-4d69-a2dc-c76bbadc507a
+java:S1128"0Remove this unused import 'java.nio.file.Files'.(‚ƒü8©„íö1J$a1894fa3-42ef-4f71-a233-0870c47b22fe
+r
+java:S1128"/Remove this unused import 'java.nio.file.Path'.(×²êÂ8©„íö1J$66031fdb-da11-41fb-a611-2b9e5aa43b86
+s
+java:S1128"0Remove this unused import 'java.nio.file.Paths'.(áè°¯8©„íö1J$9f4d0820-2c2c-4d60-b868-98e286eae2b5
+s
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ª„íö1J$3b13f1f9-664f-4765-a59b-32e74df75230
+s
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ª„íö1J$876f1fd6-5369-43e9-bfc8-94eed80fcce2

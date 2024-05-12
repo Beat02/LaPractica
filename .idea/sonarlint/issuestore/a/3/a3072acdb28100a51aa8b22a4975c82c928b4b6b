@@ -1,16 +1,14 @@
 
-†	java:S112""FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$6b08caea-c76e-4771-967d-6b0450538fa0
-†	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$53a0aa11-8c93-4b15-9beb-47c3533443ba
+	java:S112:"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã›²íö1J$f15a943f-bb37-48a4-bb38-c4e0a3ef0cca
 R
-java:S1700"Rename field "ranking"(÷±ÂÀJ$6b4c6524-f1be-4eaa-ab13-da5e9ed1bf3e
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅJ$853ae931-5f31-4361-bdb0-9c0eb60d8904
+java:S1700"Rename field "ranking"(÷±ÂÀJ$eb7dbb87-10cd-421e-a04b-a89623e12b67
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅJ$9c815cd4-f2a7-4f3d-9d6d-ac47c39a6e2b
+É
+java:S11860"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¢‚ˆøÿÿÿÿ8¤Ú¯íö1J$2a9e6c22-c6be-4633-a24e-59d7cf31d172
 n
-java:S1135"2Complete the task associated to this TODO comment.( ş€•J$3b626084-d1ca-4e36-b137-9d1f14def7c2
-f	java:S106 "+Replace this use of System.out by a logger.(ÆıšJ$80941a09-d022-499f-927d-e18b61d8beb2
-x
-java:S3972$"7Move this "if" to a new line or add the missing "else".(¸é²ìıÿÿÿÿJ$a60c103b-f1ae-400d-812a-b16fe1a5fe29
-f	java:S106'"+Replace this use of System.out by a logger.(ÆıšJ$9d41ffe8-58cd-4c2f-b08e-a475d4a32ce1
-n
-java:S11358"2Complete the task associated to this TODO comment.(ÈÜÌŸJ$ea1ddada-a785-40f1-9ccf-f3e8149a02dc
+java:S1135"2Complete the task associated to this TODO comment.( ş€•J$b0923ab3-71ac-4087-aea9-2612c737f511
+u
+java:S1135"2Complete the task associated to this TODO comment.(ÈÜÌŸ8÷­íö1J$ef6b7994-4d17-4d6c-b63a-345085b405ff
+m	java:S1068"+Replace this use of System.out by a logger.(Æıš8¢œ²íö1J$bf49c473-0529-4cf6-ae4b-825063fc9fce
 s
-java:S1068"7Remove this unused "listaJugRegistrados" private field.(«‘„™J$c5accbc6-b0bb-409c-a0df-8f743e11430e
+java:S1068"7Remove this unused "listaJugRegistrados" private field.(«‘„™J$ae1ee45f-b055-4d5a-bb3f-17630c7ddd1e

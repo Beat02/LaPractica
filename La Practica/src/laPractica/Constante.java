@@ -10,7 +10,7 @@ public class Constante {
     public static final int maxJugagores = 4;
     //
     public static final String ranking="RankingJugadores.txt";
-    public static final String registrados="JugadoresRegistrado.txt";
+    public static final String registrados="JugadoresRegistrados.txt";
     public static final String historico="HistoricoPartidas.txt";
     //
     public static final String pcu1="Ada_Lovelace";

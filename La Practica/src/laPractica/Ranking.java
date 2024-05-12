@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ranking {
+public class Ranking implements Ficheros {
     //TODO: revisar clase
     private ArrayList<Jugador> ranking;
     //Ver Jugadores: muestra la lista de jugadores registrados
@@ -17,41 +17,16 @@ public class Ranking {
 
     public Ranking() {
         this.ranking = new ArrayList<>();
-        this.listaJugRegistrados=new ArrayList<>();
+        this.listaJugRegistrados = new ArrayList<>();
     }
 
     /**
-     *
-     * @param opcion(dependiendo si quieren imprimir el ranking, el historico o la lista de jugadores)
-     * @
-     */
-    public void imprimirListaJugadores(int opcion){
-        if (opcion==1){
-            Path path=Paths.get(Constante.registrados);
-            try {
-                System.out.println(Files.readString(path));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }if (opcion==2){
-            Path path=Paths.get(Constante.ranking);
-            try {
-                System.out.println(Files.readString(path));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-    }
-
-    /**
-     *
-     * @param rutaArchivo
      * @return ArrayList<Jugador> importado desde RankingJugadores.txt
      */
-    public static List<Jugador> cargarJugadoresDesdeArchivo(String rutaArchivo) {
-        List<Jugador> listaJugadores = new ArrayList<>();
-        Path rutaFichero = Path.of(rutaArchivo);
+    @Override
+    public ArrayList<Jugador> importarArchivo() throws IOException {
+        ArrayList<Jugador> listaJugadores = new ArrayList<>();
+        Path rutaFichero = Path.of(Constante.ranking);
 
         try {//TODO: revisar para entender mejor
             List<String> lineas = Files.readAllLines(rutaFichero, StandardCharsets.UTF_8);
@@ -66,8 +41,23 @@ public class Ranking {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return listaJugadores;
+    }
+
+    @Override
+    public void exportarArchivo(ArrayList<String> contenido, String nombreArchivo) throws IOException {
+
+    }
+
+    @Override
+    public void imprimirArchivo() throws IOException {
+        Path path = Paths.get(Constante.ranking);
+        try {
+            System.out.println(Files.readString(path));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 

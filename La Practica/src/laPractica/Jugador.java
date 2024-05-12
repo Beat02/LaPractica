@@ -41,30 +41,8 @@ public class Jugador {
         setPuntuacion(puntuacionActualizada);
     }
 
-    /**
-     *
-     * @return si es false es que NO está repetido, si es TRUE es que SI está repetido
-     */
-    public boolean jugadorRepetido(String nombre) {
-        Jugador nuevoJugador = new Jugador(nombre);
-        Path rutaFichero = Paths.get("RankingJugadores.txt");
-        List<Jugador> listaJugadores = Ranking.cargarJugadoresDesdeArchivo("RankingJugadores.txt");
-        boolean mismoJugador = false;
-        if (!listaJugadores.isEmpty()) {
-            int i = 0;
-            while (!mismoJugador && i < listaJugadores.size()) {
-                mismoJugador = nuevoJugador.equals(listaJugadores.get(i));
-                i++;
-            }
-            if (!mismoJugador) {
-                System.out.println("El jugador no se encuentra en la base de datos, vamos a añadirlo");
-            }
-            if (mismoJugador) {
-                System.out.println("Este jugador ya se encuentra en el registro");
-            }
-        }
-        return mismoJugador;
-    }
+
+
 
     @Override
     public boolean equals(Object o) {
