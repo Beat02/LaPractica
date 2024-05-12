@@ -1,0 +1,16 @@
+
+†	java:S112""FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$6b08caea-c76e-4771-967d-6b0450538fa0
+†	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$53a0aa11-8c93-4b15-9beb-47c3533443ba
+R
+java:S1700"Rename field "ranking"(÷±ÂÀJ$6b4c6524-f1be-4eaa-ab13-da5e9ed1bf3e
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅJ$853ae931-5f31-4361-bdb0-9c0eb60d8904
+n
+java:S1135"2Complete the task associated to this TODO comment.( ş€•J$3b626084-d1ca-4e36-b137-9d1f14def7c2
+f	java:S106 "+Replace this use of System.out by a logger.(ÆıšJ$80941a09-d022-499f-927d-e18b61d8beb2
+x
+java:S3972$"7Move this "if" to a new line or add the missing "else".(¸é²ìıÿÿÿÿJ$a60c103b-f1ae-400d-812a-b16fe1a5fe29
+f	java:S106'"+Replace this use of System.out by a logger.(ÆıšJ$9d41ffe8-58cd-4c2f-b08e-a475d4a32ce1
+n
+java:S11358"2Complete the task associated to this TODO comment.(ÈÜÌŸJ$ea1ddada-a785-40f1-9ccf-f3e8149a02dc
+s
+java:S1068"7Remove this unused "listaJugRegistrados" private field.(«‘„™J$c5accbc6-b0bb-409c-a0df-8f743e11430e

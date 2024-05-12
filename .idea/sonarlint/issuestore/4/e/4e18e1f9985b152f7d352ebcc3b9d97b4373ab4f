@@ -1,0 +1,11 @@
+
+¶
+java:S1319$"nThe type of "arrayJugadores" should be an interface such as "List" rather than the implementation "ArrayList".(—å´ÿÿÿÿÿ8õšÌãö1J$4643ab16-de76-4b2f-a9d0-5164e8c9300d
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅ8ùšÌãö1J$c2509f00-79eb-46fd-826f-565a15d1d354
+r	java:S106"+Replace this use of System.out by a logger.(õÒƒ¾şÿÿÿÿ8Œ›Ìãö1J$b5036fd8-c452-42b8-a042-b02b0a280e72
+z
+java:S6126"2Replace this String concatenation with Text block.(õÒƒ¾şÿÿÿÿ8›Ìãö1J$3737e8eb-e251-437c-8d28-a814bb2e5e83
+m	java:S106"+Replace this use of System.out by a logger.(ëĞ÷8›Ìãö1J$6ea2f889-f6f6-44f8-ae2b-b69fd91a0c7f
+m	java:S106*"+Replace this use of System.out by a logger.(¥Å›·8’›Ìãö1J$12d4f6ee-b353-488d-a5df-450afd247677
+r	java:S106-"+Replace this use of System.out by a logger.(¤‰«Áüÿÿÿÿ8“›Ìãö1J$0998a346-c6e2-4ee7-9cc7-ccb229b1bf00
+r	java:S106."+Replace this use of System.out by a logger.(éÃüèşÿÿÿÿ8“›Ìãö1J$7002cb4a-d125-4d52-996b-52264eb69b96

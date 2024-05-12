@@ -39,7 +39,11 @@ public class Ronda {
             //hacer pregunta al jugador
             boolean aciertoPregunta=false;
             if (aciertoPregunta){
+                System.out.println("¡Has acertado! :)");
                 jugador.setPuntuacion(jugador.getPuntuacion()+1);
+            } else if (!aciertoPregunta) {
+                System.out.println("Has fallado :(");
+                System.out.println("La respuesta correcta es: ");
             }
 
         }

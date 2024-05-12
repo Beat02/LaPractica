@@ -17,6 +17,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
 import static java.nio.file.StandardOpenOption.APPEND;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class JugadorTest {
     static Jugador nuevoJugador;

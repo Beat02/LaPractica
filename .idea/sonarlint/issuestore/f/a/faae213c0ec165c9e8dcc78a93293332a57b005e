@@ -1,0 +1,13 @@
+
+†	java:S112?"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$96e8c5ba-453e-4a60-ae5f-1ff7dc086a48
+†	java:S112F"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$142d1363-eb69-4dbb-8886-93a310427c8c
+†	java:S112L"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$242758e1-31a0-4cc6-83e9-f286d2782d7a
+¬
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ËãÈêJ$1d7b556b-0912-42f9-a490-d06a10b98d26
+ª
+java:S1319."nThe type of "arrayJugadores" should be an interface such as "List" rather than the implementation "ArrayList".(¶·Ñ£J$b2263e1d-81dd-470c-ab2e-91c7ea2c3744
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅJ$2bc00219-ea42-4a2b-bb2a-c76db9b82b69
+k	java:S1060"+Replace this use of System.out by a logger.(Åó¥ÿÿÿÿÿJ$91d99736-df65-4752-8527-71c250d63bf6
+f	java:S1062"+Replace this use of System.out by a logger.(Ó©ÕJ$9bab6204-e0c4-41d9-9311-ddeb812b4f90
+k	java:S106_"+Replace this use of System.out by a logger.(ÃÚÜÉûÿÿÿÿJ$c378870d-198c-4b21-b84f-7283e29ee1d3
+l	java:S106b"+Replace this use of System.out by a logger.(á›\8Ò“âö1J$39172996-1b8d-4f31-a125-faf0c15bccd5

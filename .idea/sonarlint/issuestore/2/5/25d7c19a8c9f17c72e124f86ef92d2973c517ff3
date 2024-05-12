@@ -1,0 +1,25 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅJ$c3762cf3-8d1d-4ad8-bf7d-6ab3f6ab33f4
+o
+java:S3776
+"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Çµí‘8ÂĞ“âö1
+\
+java:S1854"?Remove this useless assignment to local variable "rutaFichero".(ñ„ÙŠ8ÄĞ“âö1
+M
+java:S1481"0Remove this unused "rutaFichero" local variable.(ñ„ÙŠ8ÔĞ“âö1
+L	java:S106"+Replace this use of System.out by a logger.(´àöÌıÿÿÿÿ8ØĞ“âö1
+T
+java:S6126"2Replace this String concatenation with Text block.(´àöÌıÿÿÿÿ8ÙĞ“âö1
+G	java:S106"+Replace this use of System.out by a logger.(Î«Ç˜8âĞ“âö1
+G	java:S106 "+Replace this use of System.out by a logger.(”Ì×ƒ8çĞ“âö1
+L	java:S106#"+Replace this use of System.out by a logger.(Í£ˆ¤şÿÿÿÿ8ñĞ“âö1
+T
+java:S1135$"2Complete the task associated to this TODO comment.(¥Ğâîûÿÿÿÿ8÷Ğ“âö1
+F	java:S106'"+Replace this use of System.out by a logger.(òÄ™8úĞ“âö1
+T
+java:S1135&"2Complete the task associated to this TODO comment.(õĞ“¿şÿÿÿÿ8üĞ“âö1
+L	java:S106+"+Replace this use of System.out by a logger.(±µÒÖşÿÿÿÿ8€Ñ“âö1
+O
+java:S1135."2Complete the task associated to this TODO comment.(ãÍÙÍ8„Ñ“âö1
+G	java:S106J"+Replace this use of System.out by a logger.(æ¬›‚8Ñ“âö1
+i	java:S108M")Either remove or fill this block of code.(ÿ°ô–şÿÿÿÿJ$382480a6-1fa9-4452-889c-0e58ae9480fb
