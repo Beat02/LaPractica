@@ -1,10 +1,10 @@
 package laPractica;
 
 public class PreguntaMatematicas extends Pregunta{
-    String respuestaCorrecta;
 
-    public PreguntaMatematicas(String respuestaCorrecta) {
-        this.respuestaCorrecta = respuestaCorrecta;
+
+    public PreguntaMatematicas() {
+        super();
     }
 
     /**
@@ -14,6 +14,15 @@ public class PreguntaMatematicas extends Pregunta{
     //TODO: falta montarla entera
     @Override
     public String getEnunciadoPregunta() {
-        return "";
+       String enunciadoPregunta=crearEnunciadoPregunta();
+        return enunciadoPregunta;
+    }
+    public String crearEnunciadoPregunta(){
+        String enunciado="2+2";
+        return enunciado;
+    }
+    public String getRespuestaCorrecta(){
+        String respuesta="4";
+        return respuesta;
     }
 }

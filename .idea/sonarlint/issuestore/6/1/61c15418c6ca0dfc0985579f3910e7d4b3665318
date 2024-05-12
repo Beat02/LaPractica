@@ -1,9 +1,10 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅ8éÓÍãö1J$4586df96-a8ab-4b01-9f23-2de737462434
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅ8³¦–äö1J$222d1be4-fa1f-4525-ad33-399012eb3672
+¨
+java:S1450"`Remove the "enunciadoPregunta" field and declare it as a local variable in the relevant methods.(æÀÇ„ıÿÿÿÿ8¨åö1J$dd3a53b5-aa68-4227-b586-163cf8aff5e2
 |
-java:S5993"9Change the visibility of this constructor to "protected".(½Ø‘ÿ8íÓÍãö1J$b408b19b-f3b0-461c-80e8-fbed916e5f58
-k	java:S108
-")Either remove or fill this block of code.(•Ö»ñ8ïÓÍãö1J$7de8a96d-afb3-4049-b70c-3530ec7d1678
-œ
-java:S1171
-"YMove the contents of this initializer to a standard constructor or to field initializers.(•Ö»ñ8ğÓÍãö1J$4b79205f-e16c-43b4-a336-acf578613601
+java:S5993"9Change the visibility of this constructor to "protected".(½Ø‘ÿ8Ë¦–äö1J$5cddc7f5-860a-4f71-b6d5-e0ccaf4cd10a
+}
+java:S1068"5Remove this unused "enunciadoPregunta" private field.(æÀÇ„ıÿÿÿÿ8¥Í™äö1J$02aa3b2b-e205-4eae-9fe1-5306039be43d
+}
+java:S1068"5Remove this unused "respuestaCorrecta" private field.(ŞË‰ÿÿÿÿÿ8øˆ‚åö1J$cd5b6faf-de7a-487e-9660-4a10ac87ff61

@@ -34,16 +34,21 @@ public class Ronda {
         return totalRondas;
     }
     public void jugarRonda(ArrayList<Jugador> arrayJugadores){
+        Scanner teclado=new Scanner(System.in);
         for (int i = 0; i < arrayJugadores.size(); i++) {
             Jugador jugador=arrayJugadores.get(i);
-            //hacer pregunta al jugador
-            boolean aciertoPregunta=false;
+            Pregunta pregunta=new PreguntaMatematicas();
+            System.out.println("Es el turno de: "+jugador.getNombre());
+            System.out.println(pregunta.getEnunciadoPregunta());
+            String respuestaPorTeclado= teclado.next();
+            boolean aciertoPregunta=pregunta.getRespuestaCorrecta().equalsIgnoreCase(respuestaPorTeclado);
+
             if (aciertoPregunta){
                 System.out.println("¡Has acertado! :)");
                 jugador.setPuntuacion(jugador.getPuntuacion()+1);
             } else if (!aciertoPregunta) {
                 System.out.println("Has fallado :(");
-                System.out.println("La respuesta correcta es: ");
+                System.out.println("La respuesta correcta es: "+pregunta.getRespuestaCorrecta());
             }
 
         }
