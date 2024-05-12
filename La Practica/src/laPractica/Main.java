@@ -66,18 +66,27 @@ public class Main {
                 arrayJugadores.add(pcu);
             }
         }
-
-        //imprimir orden aleatorio
+        //TODO: INICIO JUEGO!!
         Partida partida = new Partida();
-        partida.imprimirOrdenAleatorio(arrayJugadores);
-        //rondas
-        System.out.println("Perfecto, ya sabemos los jugadores");
-        Ronda ronda = new Ronda();
-        int numRondas = ronda.menuNumRondas();
-        for (int i = 0; i < numRondas; i++) {
-            ronda.jugarRonda(arrayJugadores);
+        int opcionJugador = partida.menuIncial();
+        while (opcionJugador != 5) {
+            //imprimir orden aleatorio
+            if (opcionJugador==1){
+                partida.imprimirOrdenAleatorio(arrayJugadores);
+                //rondas
+                System.out.println("Perfecto, ya sabemos los jugadores");
+                Ronda ronda = new Ronda();
+                int numRondas = ronda.menuNumRondas();
+                for (int i = 0; i < numRondas; i++) {
+                    ronda.jugarRonda(arrayJugadores);
+                }
+                partida.endGame();
+                partida.menuIncial();
+            }
+
+
         }
-        partida.endGame();
+        System.out.println("¡Gracias por haber jugado a Conocer y Triunfar!");
 
 
     }

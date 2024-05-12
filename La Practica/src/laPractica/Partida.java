@@ -7,10 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Partida {
     Map<String, Integer> mapaJugadores;
@@ -77,6 +74,20 @@ public class Partida {
         }
     }
 
+    public int menuIncial() {
+        Scanner teclado = new Scanner(System.in);
+        int opcionMenu;
+        System.out.println("Bienvenide a Conocer y Triunfar, tu juego de preguntas online, ¿qué quieres hacer?+" +
+                "\n" + "1. Jugar nueva partida" +
+                "\n" + "2. Ver ranking de jugadores" +
+                "\n" + "3. Ver histórico de partidas" +
+                "\n" + "4. Menú jugadores" +
+                "\n" + "5. Salir");
+        opcionMenu = teclado.nextInt();
+        return opcionMenu;
+    }
+
+
     /**
      * @apiNote nos imprime el jugador ganador de la partida
      */
@@ -94,10 +105,12 @@ public class Partida {
         // Imprimir el máximo
         System.out.println("El ganador de la partida es: " + maximaClave + " con una puntuación de: " + maximo);
     }
-    public void puntuacionFinalPartida(){
-        System.out.println("El resultado final de esta partida es: "+ mapaJugadores.toString());
+
+    public void puntuacionFinalPartida() {
+        System.out.println("El resultado final de esta partida es: " + mapaJugadores.toString());
     }
-    public void endGame(){
+
+    public void endGame() {
         puntuacionFinalPartida();
         ganadorPartida();
         actualizarHistorico();
