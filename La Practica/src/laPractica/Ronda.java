@@ -1,15 +1,15 @@
 package laPractica;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ronda {
 
-
     /**
-     * @apiNote metodo con el menu sobre las rondas
      * @return int con número de rondas
+     * @apiNote metodo con el menu sobre las rondas
      */
-    public int numRondas() {
+    public int menuNumRondas() {
         Scanner teclado = new Scanner(System.in);
         int totalRondas = 0;
         System.out.println("Hay cuatro tipos de rondas,¿cuál quires jugar?" +
@@ -29,9 +29,20 @@ public class Ronda {
         } else {
             System.out.println("El tipo de ronda que has indicado no es correcto, prueba de nuevo");
             Ronda ronda = new Ronda();
-            totalRondas = ronda.numRondas();
+            totalRondas = ronda.menuNumRondas();
         }
         return totalRondas;
+    }
+    public void jugarRonda(ArrayList<Jugador> arrayJugadores){
+        for (int i = 0; i < arrayJugadores.size(); i++) {
+            Jugador jugador=arrayJugadores.get(i);
+            //hacer pregunta al jugador
+            boolean aciertoPregunta=false;
+            if (aciertoPregunta){
+                jugador.setPuntuacion(jugador.getPuntuacion()+1);
+            }
+
+        }
     }
 
 }

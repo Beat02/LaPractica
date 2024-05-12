@@ -1,11 +1,8 @@
 package laPractica;
 
-import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 
@@ -76,7 +73,7 @@ public class Main {
         //rondas
         System.out.println("Perfecto, ya sabemos los jugadores");
         Ronda ronda=new Ronda();
-        int numRondas=ronda.numRondas();
+        int numRondas=ronda.menuNumRondas();
         for (int i = 0; i < numRondas; i++) {
 
 

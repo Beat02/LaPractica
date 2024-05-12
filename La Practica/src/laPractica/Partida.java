@@ -94,5 +94,13 @@ public class Partida {
         // Imprimir el máximo
         System.out.println("El ganador de la partida es: " + maximaClave + " con una puntuación de: " + maximo);
     }
+    public void puntuacionPartida(){
+        System.out.println("El resultado final de esta partida es: "+ mapaJugadores.toString());
+    }
+    public void endGame(){
+        puntuacionPartida();
+        ganadorPartida();
+        actualizarHistorico();
+    }
 
 }
