@@ -1,14 +1,18 @@
 
-	java:S112:"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã›²íö1J$f15a943f-bb37-48a4-bb38-c4e0a3ef0cca
-R
-java:S1700"Rename field "ranking"(÷±ÂÀJ$eb7dbb87-10cd-421e-a04b-a89623e12b67
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅJ$9c815cd4-f2a7-4f3d-9d6d-ac47c39a6e2b
-É
-java:S11860"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¢‚ˆøÿÿÿÿ8¤Ú¯íö1J$2a9e6c22-c6be-4633-a24e-59d7cf31d172
-n
-java:S1135"2Complete the task associated to this TODO comment.( ş€•J$b0923ab3-71ac-4087-aea9-2612c737f511
+	java:S112f"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8³òŒôö1J$79ee9c68-4703-4e13-89d0-c8d5c6c18b9c
+¸
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(£Öªúÿÿÿÿ8µòŒôö1J$901cc54f-9e7b-4618-b6ba-41daef3a4b46
+¸
+java:S1319F"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ãšşÉúÿÿÿÿ8µòŒôö1J$409f407c-dc88-4281-911f-1774ee85744b
+¶
+java:S1319F"nThe type of "listaJugadores" should be an interface such as "List" rather than the implementation "ArrayList".(ãšşÉúÿÿÿÿ8¶òŒôö1J$4715fa72-f340-4df9-a035-dba2d160c775
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ÷İÅ8¸òŒôö1J$e513e5e6-18ad-4520-b142-e090f222d6ec
 u
-java:S1135"2Complete the task associated to this TODO comment.(ÈÜÌŸ8÷­íö1J$ef6b7994-4d17-4d6c-b63a-345085b405ff
-m	java:S1068"+Replace this use of System.out by a logger.(Æıš8¢œ²íö1J$bf49c473-0529-4cf6-ae4b-825063fc9fce
-s
-java:S1068"7Remove this unused "listaJugRegistrados" private field.(«‘„™J$ae1ee45f-b055-4d5a-bb3f-17630c7ddd1e
+java:S1135"2Complete the task associated to this TODO comment.( ş€•8ÊòŒôö1J$55a24d8e-a679-4b82-bc05-457090a28261
+u
+java:S11354"2Complete the task associated to this TODO comment.(ÈÜÌŸ8ĞòŒôö1J$075399a5-fffb-439b-be72-78d26ad9468e
+´
+java:S1130F"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ãšşÉúÿÿÿÿ8ÓòŒôö1J$cdbd9c81-ea4d-4c68-9136-5f7095723268
+m	java:S106T"+Replace this use of System.out by a logger.(è½´à8ÖòŒôö1J$6b1417e5-934c-47b5-8d54-09dea06aa498
+m	java:S106V"+Replace this use of System.out by a logger.(ïìñÑ8ÖòŒôö1J$3c8b0e35-6ff7-4463-bbaa-a1b8761ec255
+m	java:S106d"+Replace this use of System.out by a logger.(¡šì8ØòŒôö1J$5001daa9-0427-42fb-a119-0816fd81f1f1

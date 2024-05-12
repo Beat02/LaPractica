@@ -36,17 +36,18 @@ public class Persona extends Jugador implements Ficheros {
             switch (opcionMenu) {
                 case 1:
                     imprimirArchivo();
-                    menuJugador();
+                    opcionMenu = menuJugador();
                     break;
-                case 2://añadir jugador
-                    menuJugador();
+                case 2:
+                    anhadirJugador();
+                    opcionMenu = menuJugador();
                     break;
-                case 3://eliminar jugador
-                    menuJugador();
+                case 3:
+                    eliminarJugador();
+                    opcionMenu = menuJugador();
                     break;
             }
         }
-
         return opcionMenu;
     }
 
@@ -64,10 +65,10 @@ public class Persona extends Jugador implements Ficheros {
                 i++;
             }
             if (!mismoJugador) {
-                System.out.println("El jugador no se encuentra en la base de datos, vamos a añadirlo");
+                System.out.println("El jugador no se encuentra en el registro");
             }
             if (mismoJugador) {
-                System.out.println("Este jugador ya se encuentra en el registro");
+                System.out.println("Este jugador se encuentra en el registro");
             }
         }
         return mismoJugador;
@@ -88,11 +89,32 @@ public class Persona extends Jugador implements Ficheros {
         } else {
             System.out.println("No es posible añadir este jugador");
         }
-
     }
 
-    public boolean eliminarJugador() {
-        return true;
+    public void eliminarJugador() throws IOException {
+        String nombreEliminarJugador;
+        Scanner teclado = new Scanner(System.in);
+        Ranking ranking=new Ranking();
+        System.out.println("Dime el nombre del jugador que quieres eliminar: " +
+                "\n" + "¡RECUERDA! El nombre del jugador no puede tener espacios");
+        nombreEliminarJugador = teclado.next(); //TODO: chequear que tenga espacios!
+        boolean jugadorRepe = jugadorRepetido(nombreEliminarJugador);
+        if (jugadorRepe) {
+            ArrayList<Jugador> listaJugadores = importarArchivo();
+            int i = 0;
+            while (jugadorRepe && i < listaJugadores.size()) {
+                Jugador jugadorAEliminar = new Persona(nombreEliminarJugador);
+                jugadorRepe = jugadorAEliminar.equals(listaJugadores.get(i));
+                i++;
+            }
+            listaJugadores.remove(i);
+            ranking.eliminarJugadorRanking(listaJugadores.get(i));
+            System.out.println("Jugador eliminado del registro y del ranking");
+
+        } else {
+            System.out.println("No es posible eliminar un jugador que no se encuentra en el registro");
+        }
+
     }
 
     @Override
@@ -127,7 +149,7 @@ public class Persona extends Jugador implements Ficheros {
     }
 
     @Override
-    public void exportarArchivo(ArrayList<String> contenido, String nombreArchivo) throws IOException {
+    public void exportarArchivo(ArrayList<Jugador> listaJugadores) throws IOException {
 
     }
 }

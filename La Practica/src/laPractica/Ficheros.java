@@ -11,6 +11,6 @@ public interface Ficheros {
     ArrayList<Jugador> importarArchivo() throws IOException;
 
     // Método para exportar un ArrayList a un archivo
-    void exportarArchivo(ArrayList<String> contenido, String nombreArchivo) throws IOException;
+    void exportarArchivo(ArrayList<Jugador> listaJugadores) throws IOException;
 
 }
