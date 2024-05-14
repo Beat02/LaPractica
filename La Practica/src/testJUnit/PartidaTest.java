@@ -39,22 +39,25 @@ public class PartidaTest {
     @Test
     @DisplayName("comprobar historico actualizado correctamente")
     void actualizarHistorico(){
-        Map<String, Integer> datos=partidaPrueba.getMapaJugadores();
-        datos.put("PACO",5);
-        datos.put("KRIS",3);
-        datos.put("LUCIA",9);
-        partidaPrueba.setMapaJugadores(datos);
+        ArrayList<Jugador> datos=partidaPrueba.getArrayJugadores();
+//        datos.put("PACO",5);
+//        datos.put("KRIS",3);
+//        datos.put("LUCIA",9);
+        //partidaPrueba.setMapaJugadores();
         partidaPrueba.actualizarHistorico();
     }
     @Test
     @DisplayName("comprobar historico actualizado correctamente")
     void imprimirGanador(){
-        Map<String, Integer> datos=partidaPrueba.getMapaJugadores();
-        datos.put("PACO",5);
-        datos.put("KRIS",3);
-        datos.put("LUCIA",9);
-        partidaPrueba.setMapaJugadores(datos);
+        ArrayList<Jugador> arrayJugadores=new ArrayList<>();
+        arrayJugadores.add(new Jugador("Kris"));
+        arrayJugadores.get(0).setPuntuacion(3);
+        arrayJugadores.add(new Jugador("Mar"));
+        arrayJugadores.get(1).setPuntuacion(9);
+        arrayJugadores.add(new Jugador("Chenoa"));
+        arrayJugadores.get(2).setPuntuacion(5);
         partidaPrueba.ganadorPartida();
+
 
     }
 

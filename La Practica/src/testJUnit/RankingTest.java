@@ -1,6 +1,7 @@
 package testJUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import laPractica.Jugador;
 import laPractica.Ranking;
 import org.junit.jupiter.api.*;
@@ -31,21 +32,48 @@ public class RankingTest {
     void imprimirJugadoresRegistrados() throws IOException {
         rankingPrueba.imprimirArchivo();
     }
+
     @Test
     @DisplayName("comprobar correcta importacion")
     void importarRanking() throws IOException {
-        Jugador jugador1=new Jugador("Yuji");
-        Jugador jugador2=new Jugador("Yoasabi");
-        ArrayList<Jugador> listaJugador=rankingPrueba.getRankingJugadores();
-        assertEquals(jugador1,listaJugador.get(0));
-        assertEquals(jugador2,listaJugador.get(1));
+        Jugador jugador1 = new Jugador("Yuji");
+        Jugador jugador2 = new Jugador("Yoasabi");
+        ArrayList<Jugador> listaJugador = rankingPrueba.getRankingJugadores();
+        assertEquals(jugador1, listaJugador.get(0));
+        assertEquals(jugador2, listaJugador.get(1));
 
     }
+
     @Test
     @DisplayName("comprobar archivo existe")
     void rutaArchivo() throws IOException {
         assertTrue(Files.exists(rankingPrueba.getRutaRanking()));
     }
 
+    @Test
+    @DisplayName("comprobar eliminacion repes")
+    void anhadirJugador() throws IOException {
+        rankingPrueba.getRankingJugadores().removeFirst();
+        Jugador jugador1 = new Jugador("malena");
+        Jugador jugador2 = new Jugador("Luffy");
+        jugador2.setPuntuacion(4);
+        Jugador jugador3 = new Jugador("Yuji");
+        ArrayList<Jugador> listaJugadorPartida = new ArrayList<>();
+        listaJugadorPartida.add(jugador3);
+        listaJugadorPartida.add(jugador2);
+        listaJugadorPartida.add(jugador1);
+        Jugador jugador4 = new Jugador("mar");
+        Jugador jugador5 = new Jugador("Luffy");
+        jugador5.setPuntuacion(3);
+        Jugador jugador6 = new Jugador("Yuji");
+        jugador6.setPuntuacion(20);
+        rankingPrueba.getRankingJugadores().add(jugador4);
+        rankingPrueba.getRankingJugadores().add(jugador5);
+        rankingPrueba.getRankingJugadores().add(jugador6);
+        System.out.println(rankingPrueba.getRankingJugadores());
+        rankingPrueba.anhadirJugadores(listaJugadorPartida);
+        System.out.println(rankingPrueba.getRankingJugadores());
+        System.out.println(listaJugadorPartida);
 
+    }
 }

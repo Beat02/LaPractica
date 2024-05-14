@@ -12,13 +12,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Persona extends Jugador implements Ficheros {
-    private final Path rutaRegistrados=Paths.get(Constante.registrados);
+    private final Path rutaRegistrados = Paths.get(Constante.registrados);
+
     public Persona(String nombre) {
         super(nombre);
     }
 
+
     public int menuJugador() throws IOException {
-        if (!Files.exists(rutaRegistrados)){
+        if (!Files.exists(rutaRegistrados)) {
             Files.createFile(rutaRegistrados);
         }
         Scanner teclado = new Scanner(System.in);
@@ -65,7 +67,7 @@ public class Persona extends Jugador implements Ficheros {
         if (!listaJugadores.isEmpty()) {
             int i = 0;
             while (!mismoJugador && i < listaJugadores.size()) {
-                mismoJugador = nuevoJugador.equals(listaJugadores.get(i));
+                mismoJugador = nuevoJugador.getNombre().equalsIgnoreCase(listaJugadores.get(i).getNombre());
                 i++;
             }
             if (!mismoJugador) {
@@ -87,8 +89,7 @@ public class Persona extends Jugador implements Ficheros {
         boolean jugadorRepe = jugadorRepetido(nombreNuevoJugador);
         if (!jugadorRepe) {
             Jugador jugador = new Persona(nombreNuevoJugador);
-            Path rutaRegistro = Paths.get(Constante.registrados);
-            Files.write(rutaRegistro, jugador.toString().getBytes(), StandardOpenOption.APPEND);
+            Files.write(rutaRegistrados, (jugador.getNombre()+","+jugador.getPuntuacion()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
             System.out.println("Jugador añadido");
         } else {
             System.out.println("No es posible añadir este jugador");
@@ -98,7 +99,7 @@ public class Persona extends Jugador implements Ficheros {
     public void eliminarJugador() throws IOException {
         String nombreEliminarJugador;
         Scanner teclado = new Scanner(System.in);
-        Ranking ranking=new Ranking();
+        Ranking ranking = new Ranking();
         System.out.println("Dime el nombre del jugador que quieres eliminar: " +
                 "\n" + "¡RECUERDA! El nombre del jugador no puede tener espacios");
         nombreEliminarJugador = teclado.next(); //TODO: chequear que tenga espacios!
@@ -107,25 +108,28 @@ public class Persona extends Jugador implements Ficheros {
             ArrayList<Jugador> listaJugadores = importarArchivo();
             int i = 0;
             while (jugadorRepe && i < listaJugadores.size()) {
-                Jugador jugadorAEliminar = new Persona(nombreEliminarJugador);
-                jugadorRepe = jugadorAEliminar.equals(listaJugadores.get(i));
-                i++;
+                jugadorRepe = (listaJugadores.get(i).getNombre().equalsIgnoreCase(nombreEliminarJugador));
+                if (!jugadorRepe) {
+                    i++;
+                    jugadorRepe = true;
+                } else {
+                    ranking.eliminarJugadorRanking(listaJugadores.get(i));
+                    listaJugadores.remove(i);
+                    exportarArchivo(listaJugadores);
+                    System.out.println("Jugador eliminado del registro y del ranking");
+                    return;
+                }
             }
-            listaJugadores.remove(i);
-            ranking.eliminarJugadorRanking(listaJugadores.get(i));
-            System.out.println("Jugador eliminado del registro y del ranking");
-
         } else {
             System.out.println("No es posible eliminar un jugador que no se encuentra en el registro");
         }
-
     }
 
     @Override
     public void imprimirArchivo() throws IOException {
-        Path path = Paths.get(Constante.registrados);
+        System.out.println("---REGISTRO JUGADORES---");
         try {
-            System.out.println(Files.readString(path));
+            System.out.println(Files.readString(rutaRegistrados));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -134,10 +138,17 @@ public class Persona extends Jugador implements Ficheros {
     @Override
     public ArrayList<Jugador> importarArchivo() throws IOException {
         ArrayList<Jugador> listaJugadores = new ArrayList<>();
-        Path rutaFichero = Path.of(Constante.registrados);
 
-        try {//TODO: revisar para entender mejor
-            List<String> lineas = Files.readAllLines(rutaFichero, StandardCharsets.UTF_8);
+        if (!Files.exists(rutaRegistrados)) {
+            try {
+                Files.createFile(rutaRegistrados);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        try {
+            List<String> lineas = Files.readAllLines(rutaRegistrados, StandardCharsets.UTF_8);
+            if (!lineas.isEmpty()){
             for (String linea : lineas) {
                 String[] datos = linea.split(",");
                 String nombre = datos[0];
@@ -145,7 +156,7 @@ public class Persona extends Jugador implements Ficheros {
                 Jugador jugador = new Jugador(nombre);
                 jugador.setPuntuacion(puntuacion);
                 listaJugadores.add(jugador);
-            }
+            }}
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -154,6 +165,19 @@ public class Persona extends Jugador implements Ficheros {
 
     @Override
     public void exportarArchivo(ArrayList<Jugador> listaJugadores) throws IOException {
+        Files.deleteIfExists(rutaRegistrados);
+        Files.createFile(rutaRegistrados);
+        try {
+            String resgistroJugadores="";
+            for (int i = 0; i < listaJugadores.size(); i++) {
+                Jugador jugador=listaJugadores.get(i);
+                resgistroJugadores+= jugador.getNombre()+","+jugador.getPuntuacion()+ System.lineSeparator();
+            }
+            Files.write(rutaRegistrados, resgistroJugadores.getBytes(), StandardOpenOption.CREATE);
 
+            System.out.println("Archivo creado exitosamente.");
+        } catch (IOException e) {
+            System.out.println("Error al escribir el archivo: " + e.getMessage());
+        }
     }
 }

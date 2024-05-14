@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class Ranking implements Ficheros {
     //TODO: revisar clase
     private ArrayList<Jugador> rankingJugadores;
-    private final Path rutaRanking=Paths.get(Constante.ranking);
+    private final Path rutaRanking = Paths.get(Constante.ranking);
 
     public Ranking() throws IOException {
         this.rankingJugadores = importarArchivo();
@@ -47,6 +47,13 @@ public class Ranking implements Ficheros {
      */
     @Override
     public ArrayList<Jugador> importarArchivo() throws IOException {
+        if (!Files.exists(rutaRanking)) {
+            try {
+                Files.createFile(rutaRanking);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         ArrayList<Jugador> listaJugadores = new ArrayList<>();
 
         try {//TODO: revisar para entender mejor
@@ -66,21 +73,49 @@ public class Ranking implements Ficheros {
         return listaJugadores;
     }
 
+    public void anhadirJugadores(ArrayList<Jugador> arrayJugadoresActuales) {
+        boolean jugadorEnRanking = false;
+        arrayJugadoresActuales.removeIf(jugador -> jugador instanceof Maquina);
 
-    public ArrayList<Jugador> organizarRanking(ArrayList<Jugador> listaJugadores) throws IOException {
+        for (int i = 0; i < arrayJugadoresActuales.size(); i++) {
 
-        listaJugadores = listaJugadores.stream()
+            Jugador jugadorActual = arrayJugadoresActuales.get(i);
+            jugadorEnRanking = rankingJugadores.contains(jugadorActual);
+            if (jugadorEnRanking) {
+                int j = 0;
+                boolean jugadorEncontrado = false;
+                while (!jugadorEncontrado && j < rankingJugadores.size()) {
+                    jugadorEncontrado = jugadorActual.getNombre().equalsIgnoreCase(rankingJugadores.get(j).getNombre());
+                    if (!jugadorEncontrado) {
+                        j++;
+                    }
+                }
+                rankingJugadores.get(j).setPuntuacion(rankingJugadores.get(j).getPuntuacion() + jugadorActual.getPuntuacion());
+            } else {
+                rankingJugadores.add(jugadorActual);
+            }
+        }
+    }
+
+
+    public ArrayList<Jugador> organizarRanking() throws IOException {
+
+        rankingJugadores = rankingJugadores.stream()
                 .sorted(Comparator.comparingInt(Jugador::getPuntuacion).reversed())
                 .collect(Collectors.toCollection(ArrayList::new));
-        return listaJugadores;
+        return rankingJugadores;
     }
 
     @Override
     public void exportarArchivo(ArrayList<Jugador> listaJugadores) throws IOException {
-        String listaLimpia="";
+        Files.deleteIfExists(rutaRanking);
         try {
-            Files.write(rutaRanking,listaLimpia.getBytes());
-            Files.write(rutaRanking, listaJugadores.toString().getBytes(), StandardOpenOption.APPEND);
+            String rankingJugadores = "";
+            for (int i = 0; i < listaJugadores.size(); i++) {
+                Jugador jugador = listaJugadores.get(i);
+                rankingJugadores += jugador.getNombre() + "," + jugador.getPuntuacion() + System.lineSeparator();
+            }
+            Files.write(rutaRanking, rankingJugadores.getBytes(), StandardOpenOption.CREATE);
             System.out.println("Archivo creado exitosamente.");
         } catch (IOException e) {
             System.out.println("Error al escribir el archivo: " + e.getMessage());
@@ -88,33 +123,49 @@ public class Ranking implements Ficheros {
     }
 
 
-    public void guardarRankingActualizado() throws IOException {
-        ArrayList<Jugador> listaJugadores = importarArchivo();
-        ArrayList<Jugador> listaOrganizada = organizarRanking(listaJugadores);
-        exportarArchivo(listaOrganizada);
+    public void guardarRankingPostPartida(ArrayList<Jugador> arrayFinalPartida) throws IOException {
+        anhadirJugadores(arrayFinalPartida);
+        exportarArchivo(organizarRanking());
+    }
+
+    public void guardarRankingAddDelete() throws IOException {
+        exportarArchivo(rankingJugadores);
+        importarArchivo();
+        organizarRanking();
+        exportarArchivo(rankingJugadores);
     }
 
     @Override
     public void imprimirArchivo() throws IOException {
+        System.out.println("---RANKING---");
         try {
             System.out.println(Files.readString(rutaRanking));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     public void eliminarJugadorRanking(Jugador jugador) throws IOException {
-       ArrayList<Jugador> listaJugadores=importarArchivo();
-        int i=0;
-        boolean jugadorEnLista=false;
-        while (!jugadorEnLista && i < listaJugadores.size()) {
+        int i = 0;
+        boolean jugadorEnLista = false;
+        while (!jugadorEnLista && i < rankingJugadores.size()) {
             Jugador jugadorAEliminar = jugador;
-            jugadorEnLista = jugadorAEliminar.equals(listaJugadores.get(i));
-            i++;
+            jugadorEnLista = jugadorAEliminar.getNombre().equalsIgnoreCase(rankingJugadores.get(i).getNombre());
+            if (!jugadorEnLista) {
+                i++;
+            } else if (jugadorEnLista) {
+                rankingJugadores.remove(i);
+            }
         }
-        listaJugadores.remove(i);
-        exportarArchivo(listaJugadores);
-        guardarRankingActualizado();
+        guardarRankingAddDelete();
+
     }
 
-
+    @Override
+    public String toString() {
+        String listaranking = super.toString();
+        return listaranking;
+    }
 }
+
+

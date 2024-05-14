@@ -1,10 +1,7 @@
 package laPractica;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 public class Main {
@@ -77,6 +74,10 @@ public class Main {
         int opcionJugador = partida.menuIncial();
         while (opcionJugador > 0 && opcionJugador < 5) {
             ArrayList<Jugador> arrayJugadores = new ArrayList<>();
+            Persona ben10=new Persona("Ben10");
+            Persona luffy=new Persona("Luffy");
+            arrayJugadores.add(ben10);
+            arrayJugadores.add(luffy);
             if (opcionJugador == 1) {
                 partida.imprimirOrdenAleatorio(arrayJugadores);
                 //rondas
@@ -86,6 +87,7 @@ public class Main {
                 for (int i = 0; i < numRondas; i++) {
                     ronda.jugarRonda(arrayJugadores);
                 }
+                ranking.guardarRankingPostPartida(arrayJugadores);
                 partida.endGame();
                 opcionJugador = partida.menuIncial();
             } else if (opcionJugador == 2) {

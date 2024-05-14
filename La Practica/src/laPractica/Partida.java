@@ -10,18 +10,12 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class Partida {
-    Map<String, Integer> mapaJugadores;
     ArrayList<Jugador> arrayJugadores;
     LocalDateTime fechaPartida;
 
     public Partida() {
-        this.mapaJugadores = new HashMap<>();
         this.arrayJugadores = new ArrayList<>();
         this.fechaPartida = LocalDateTime.now();
-    }
-
-    public Map<String, Integer> getMapaJugadores() {
-        return mapaJugadores;
     }
 
     public ArrayList<Jugador> getArrayJugadores() {
@@ -30,10 +24,6 @@ public class Partida {
 
     public LocalDateTime getFechaPartida() {
         return fechaPartida;
-    }
-
-    public void setMapaJugadores(Map<String, Integer> mapaJugadores) {
-        this.mapaJugadores = mapaJugadores;
     }
 
     /**
@@ -60,15 +50,15 @@ public class Partida {
                 throw new RuntimeException(e);
             }
         }
-        String jugador = mapaJugadores.toString();
+        String historicoPartidas="";
         try {
-            Files.write(rutaHistorico, jugador.getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        String salto = "" + '\n';
-        try {
-            Files.write(rutaHistorico, salto.getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
+            for (int i = 0; i < arrayJugadores.size(); i++) {
+                Jugador jugador=arrayJugadores.get(i);
+                historicoPartidas+= jugador.getNombre()+","+jugador.getPuntuacion()+ " - ";
+            }
+            historicoPartidas+=System.lineSeparator();
+            Files.write(rutaHistorico, historicoPartidas.getBytes(), StandardOpenOption.CREATE);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -77,7 +67,7 @@ public class Partida {
     public int menuIncial() {
         Scanner teclado = new Scanner(System.in);
         int opcionMenu;
-        System.out.println("Bienvenide a Conocer y Triunfar, tu juego de preguntas online, ¿qué quieres hacer?+" +
+        System.out.println("Bienvenide a Conocer y Triunfar, tu juego de preguntas online, ¿qué quieres hacer?" +
                 "\n" + "1. Jugar nueva partida" +
                 "\n" + "2. Ver ranking de jugadores" +
                 "\n" + "3. Ver histórico de partidas" +
@@ -95,11 +85,11 @@ public class Partida {
         int maximo = 0;
         String maximaClave = null;
 
-        for (Map.Entry<String, Integer> datos : mapaJugadores.entrySet()) {
-            int valor = datos.getValue();
+        for (int i = 0; i < arrayJugadores.size(); i++) {
+            int valor = arrayJugadores.get(i).getPuntuacion();
             if (valor > maximo) {
                 maximo = valor;
-                maximaClave = datos.getKey();
+                maximaClave = arrayJugadores.get(i).getNombre();
             }
         }
         // Imprimir el máximo
@@ -107,7 +97,7 @@ public class Partida {
     }
 
     public void puntuacionFinalPartida() {
-        System.out.println("El resultado final de esta partida es: " + mapaJugadores.toString());
+        System.out.println("El resultado final de esta partida es: " + arrayJugadores.toString());
     }
 
     public void endGame() {
