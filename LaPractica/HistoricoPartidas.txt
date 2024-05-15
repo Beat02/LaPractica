@@ -1,0 +1,14 @@
+paca,0 - namy,3 - choper,3 - 
+luffy,0 - namy,3 - paca,2 - 
+jim,1 - namy,3 - 
+namy,3 - 
+choper,3 - namy,2 - 
+chip,1 - chop,0 - 
+Ada_Lovelace,0 - bwn,0 - 
+serio,3 - Ada_Lovelace,2 - 
+Katherine_Johnson,5 - Hypatia,8 - Ada_Lovelace,11 - 
+Ada_Lovelace,1 - bea,2 - 
+Ada_Lovelace,4 - Hypatia,0 - Katherine_Johnson,2 - Alan_Turing,2 - 
+Katherine_Johnson,3 - Ada_Lovelace,2 - Alan_Turing,0 - Hypatia,4 - 
+Alan_Turing,2 - Katherine_Johnson,2 - Ada_Lovelace,2 - Hypatia,2 - 
+sergio,1 - Ada_Lovelace,2 - bea,1 - 
