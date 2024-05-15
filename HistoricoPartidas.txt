@@ -7,3 +7,5 @@ bea,1 - Ada_Lovelace,2 - sergio,2 -
 bea,2 - Ada_Lovelace,1 - sergio,2 - 
 Ada_Lovelace,1 - sergio,1 - bea,0 - 
 Ada_Lovelace,0 - Hypatia,1 - Katherine_Johnson,1 - 
+Ada_Lovelace,2 - sergio,1 - Hypatia,1 - 
+Ada_Lovelace,1 - Hypatia,3 - edu,2 - sergio,1 - 

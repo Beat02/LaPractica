@@ -1,8 +1,6 @@
 package laPractica;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Map;
 
 public class Maquina extends Jugador {
     private final ArrayList<String> listaNombres;
@@ -10,10 +8,10 @@ public class Maquina extends Jugador {
     public Maquina(String nombre) {
         super(nombre);
         this.listaNombres = new ArrayList<>();
-        listaNombres.add(Constante.pcu1);
-        listaNombres.add(Constante.pcu2);
-        listaNombres.add(Constante.pcu3);
-        listaNombres.add(Constante.pcu4);
+        listaNombres.add(Constante.PCU_1);
+        listaNombres.add(Constante.PCU_2);
+        listaNombres.add(Constante.PCU_3);
+        listaNombres.add(Constante.PCU_4);
     }
 
     /**
@@ -45,6 +43,7 @@ public class Maquina extends Jugador {
                 break;
         }
         resultadoRespuesta(respuesta, pregunta.getEnunciadoRespuesta().getRespuesta());
+        MiLogger.log(this.getNombre() + " ha respondido: " + respuesta);
     }
 
 

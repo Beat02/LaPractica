@@ -9,9 +9,9 @@ public class Ronda {
 
     public Ronda() {
         tipoPregunta = new ArrayList<>();
-        tipoPregunta.add(Constante.mates);
-        tipoPregunta.add(Constante.ingles);
-        tipoPregunta.add(Constante.letras);
+        tipoPregunta.add(Constante.MATES);
+        tipoPregunta.add(Constante.INGLES);
+        tipoPregunta.add(Constante.LETRAS);
     }
 
     public ArrayList<String> getTipoPregunta() {
@@ -21,10 +21,10 @@ public class Ronda {
     public Pregunta tipoPreguntaRandom() {
         Collections.shuffle(tipoPregunta);
         Pregunta pregunta = null;
-        if (tipoPregunta.getFirst().equalsIgnoreCase(Constante.mates)) {
+        if (tipoPregunta.getFirst().equalsIgnoreCase(Constante.MATES)) {
             pregunta = new PreguntaMatematicas();
         }
-        else if (tipoPregunta.getFirst().equalsIgnoreCase(Constante.ingles)) {
+        else if (tipoPregunta.getFirst().equalsIgnoreCase(Constante.INGLES)) {
             pregunta = new PreguntaIngles();
         } else {
             pregunta = new PreguntaLetras();
@@ -46,13 +46,13 @@ public class Ronda {
                 '\n' + "Partida normal (10 rondas)" +
                 '\n' + "Partida larga (20 rondas)" + '\n' + "Escoge qué tipo quieres jugar (ejemplo: corta, larga,etc): ");
         String tipoRonda = teclado.next();
-        if (tipoRonda.equalsIgnoreCase(Constante.partidaRapida)) {
+        if (tipoRonda.equalsIgnoreCase(Constante.PARTIDA_RAPIDA)) {
             totalRondas = 3;
-        } else if (tipoRonda.equalsIgnoreCase(Constante.partidaCorta)) {
+        } else if (tipoRonda.equalsIgnoreCase(Constante.PARTIDA_CORTA)) {
             totalRondas = 5;
-        } else if (tipoRonda.equalsIgnoreCase(Constante.partidaNormal)) {
+        } else if (tipoRonda.equalsIgnoreCase(Constante.PARTIDA_NORMAL)) {
             totalRondas = 10;
-        } else if (tipoRonda.equalsIgnoreCase(Constante.partidaLarga)) {
+        } else if (tipoRonda.equalsIgnoreCase(Constante.PARTIDA_LARGA)) {
             totalRondas = 20;
         } else {
             System.out.println("El tipo de ronda que has indicado no es correcto, prueba de nuevo");

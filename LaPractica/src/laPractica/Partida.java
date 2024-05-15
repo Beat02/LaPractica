@@ -11,9 +11,9 @@ import java.util.*;
 public class Partida implements Ficheros {
     private ArrayList<Jugador> arrayJugadores;
     private LocalDateTime fechaPartida;
-    private final int maxJugagores = Constante.maxJugagores;
-    private final Path rutaHistorico = Paths.get(Constante.historico);
-    private final Path rutaRegistrados = Paths.get(Constante.registrados);
+    private final int maxJugagores = Constante.MAX_JUGAGORES;
+    private final Path rutaHistorico = Paths.get(Constante.HISTORICO);
+    private final Path rutaRegistrados = Paths.get(Constante.REGISTRADOS);
     final Scanner teclado = new Scanner(System.in);
 
     public Partida() {
@@ -105,6 +105,7 @@ public class Partida implements Ficheros {
         }
         for (String nombre : maximaClave) {
             System.out.println("Jugador con la mayor puntuación: " + nombre + " con una puntuación de: " + maximo);
+            MiLogger.log("Fin de partida con " + arrayJugadores.size() + " jugadores. Ganador ha sido " + nombre + " con " + maximo + " puntos.");
         }
     }
 
@@ -158,8 +159,10 @@ public class Partida implements Ficheros {
             } else {
                 System.out.println("El jugador no se encuentra en el registro, procedemos a añadirlo");
                 Files.write(rutaRegistrados, (jugador.getNombre() + System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
+                MiLogger.log("Jugador añadido al registro de jugadores: " + nombreJugador);
                 arrayJugadores.add(new Persona(nombreJugador));
             }
+            MiLogger.log("Jugador añadido a la partida: " + nombreJugador);
         }
         System.out.println("Perfecto, ya casi estamos");
     }
