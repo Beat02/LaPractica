@@ -17,7 +17,7 @@ public class PreguntaLetras extends Pregunta{
 
     /**
      *
-     * @return
+     * @return devuelve palabra aleatoria del diccionario
      */
     private String obtenerPalabraAleatoria() {
         String palabra = "";
@@ -35,6 +35,10 @@ public class PreguntaLetras extends Pregunta{
         return palabra;
     }
 
+    /**
+     *
+      * @return devuelve palabra con las letras tapadas
+     */
     private String ocultarLetrasDePalabraAleatorio() {
         String palabraOculta = "";
         int[] ocultas = new int[3];

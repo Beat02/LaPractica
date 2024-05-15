@@ -55,17 +55,15 @@ public class Ranking implements Ficheros {
                 throw new RuntimeException(e);
             }
         } else {
-            try {//TODO: revisar para entender mejor
+            try {
                 List<String> lineas = Files.readAllLines(rutaRanking, StandardCharsets.UTF_8);
-                // if (!lineas.isEmpty()) {
                 for (String linea : lineas) {
                     if (linea.trim().isEmpty()) {
                         continue; // Saltar líneas vacías
                     }
-
                     String[] datos = linea.split(",");
                     if (datos.length < 2) {
-                        continue; // Saltar líneas que no tienen el formato esperado
+                        continue;
                     }
                     datos = linea.split(",");
                     String nombre = datos[0];
@@ -74,7 +72,6 @@ public class Ranking implements Ficheros {
                     jugador.setPuntuacion(puntuacion);
                     listaJugadores.add(jugador);
                 }
-                //}
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -82,10 +79,14 @@ public class Ranking implements Ficheros {
         return listaJugadores;
     }
 
+    /**
+     *
+     * @param arrayJugadoresActuales para añadirlos al ranking
+     */
     public void anhadirJugadores(ArrayList<Jugador> arrayJugadoresActuales) {
         if (!rankingJugadores.isEmpty()) {
             for (Jugador jugadorActual : arrayJugadoresActuales) {
-                if (jugadorActual instanceof Maquina){
+                if (jugadorActual instanceof Maquina) {
                     continue;
                 }
                 boolean nombreEncontrado = false;
@@ -98,21 +99,29 @@ public class Ranking implements Ficheros {
                     }
                 }
                 if (!nombreEncontrado) {
-                    // Añadir el jugadorActual a listaGrande
+                    // Añadir el jugadorActual al ranking de la partida
                     rankingJugadores.add(jugadorActual);
                 }
             }
         }
     }
 
-    public ArrayList<Jugador> organizarRanking() throws IOException {
-
+    /**
+     *
+     * @return ranking de jugadores ordenado de mayor a menor puntuacion
+     */
+    public ArrayList<Jugador> organizarRanking(){
         rankingJugadores = rankingJugadores.stream()
                 .sorted(Comparator.comparingInt(Jugador::getPuntuacion).reversed())
                 .collect(Collectors.toCollection(ArrayList::new));
         return rankingJugadores;
     }
 
+    /**
+     *
+     * @param listaJugadores arraylist de los jugadores en el RankingJugadores.txt
+     * @throws IOException si hay un error al escribir el archivo
+     */
     @Override
     public void exportarArchivo(ArrayList<Jugador> listaJugadores) throws IOException {
         Files.deleteIfExists(rutaRanking);
@@ -129,7 +138,11 @@ public class Ranking implements Ficheros {
         }
     }
 
-
+    /**
+     * @apiNote para guardar el ranking con los cambios actualizados
+     * @param arrayFinalPartida array con los puntos finales de la partida
+     * @throws IOException de los metodos internos
+     */
     public void guardarRankingPostPartida(ArrayList<Jugador> arrayFinalPartida) throws IOException {
         anhadirJugadores(arrayFinalPartida);
         exportarArchivo(rankingJugadores);
@@ -138,6 +151,10 @@ public class Ranking implements Ficheros {
         exportarArchivo(rankingJugadores);
     }
 
+    /**
+     * @apiNote para guardar los cambios tras añadir o eliminar jugadores del ranking
+     * @throws IOException de los metodos internos
+     */
     public void guardarRankingAddDelete() throws IOException {
         exportarArchivo(rankingJugadores);
         importarArchivo();
@@ -145,8 +162,12 @@ public class Ranking implements Ficheros {
         exportarArchivo(rankingJugadores);
     }
 
+    /**
+     * @apiNote
+     * @throws IOException si hay error al leer el fichero
+     */
     @Override
-    public void imprimirHistorico() throws IOException {
+    public void imprimirFichero() throws IOException {
         System.out.println("---RANKING---");
         try {
             System.out.println(Files.readString(rutaRanking));

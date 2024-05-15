@@ -18,6 +18,10 @@ public class Ronda {
         return tipoPregunta;
     }
 
+    /**
+     * @apiNote crea una pregunta de tipo random
+     * @return pregunta aleatoria
+     */
     public Pregunta tipoPreguntaRandom() {
         Collections.shuffle(tipoPregunta);
         Pregunta pregunta = null;
@@ -62,6 +66,11 @@ public class Ronda {
         return totalRondas;
     }
 
+    /**
+     * @apiNote metodo para jugar ronda
+     * @param arrayJugadores necesario para jugar ronda
+     * @return
+     */
     public ArrayList<Jugador> jugarRonda(ArrayList<Jugador> arrayJugadores) {
         for (int i = 0; i < arrayJugadores.size(); i++) {
             Jugador jugador = arrayJugadores.get(i);
@@ -72,5 +81,4 @@ public class Ronda {
         }
         return arrayJugadores;
     }
-
 }

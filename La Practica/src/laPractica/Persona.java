@@ -45,7 +45,7 @@ public class Persona extends Jugador implements Ficheros {
         while (opcionMenu < 4 && opcionMenu > 0) {
             switch (opcionMenu) {
                 case 1:
-                    imprimirHistorico();
+                    imprimirFichero();
                     opcionMenu = menuJugador();
                     break;
                 case 2:
@@ -139,7 +139,7 @@ public class Persona extends Jugador implements Ficheros {
      * @apiNote imprime historico de partidas
      */
     @Override
-    public void imprimirHistorico() throws IOException {
+    public void imprimirFichero() throws IOException {
         System.out.println("---REGISTRO JUGADORES---");
         try {
             // Lee todas las líneas del archivo y guárdalas en una lista

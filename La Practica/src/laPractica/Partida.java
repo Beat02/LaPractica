@@ -121,7 +121,7 @@ public class Partida implements Ficheros {
      * @apiNote imprime historico partidas
      */
     @Override
-    public void imprimirHistorico() throws IOException {
+    public void imprimirFichero() throws IOException {
         System.out.println("---HISTORICO---");
         try {
             System.out.println(Files.readString(rutaHistorico));

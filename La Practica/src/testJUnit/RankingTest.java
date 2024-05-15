@@ -31,7 +31,7 @@ public class RankingTest {
     @Test
     @DisplayName("comprobar que se imprime correctamente")
     void imprimirJugadoresRegistrados() throws IOException {
-        rankingPrueba.imprimirHistorico();
+        rankingPrueba.imprimirFichero();
     }
 
     @Test
