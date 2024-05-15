@@ -17,6 +17,10 @@ public class Jugador {
         this.puntuacion = 0;
     }
 
+    public Jugador() {
+
+    }
+
     public String getNombre() {
         return nombre;
     }

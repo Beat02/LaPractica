@@ -7,9 +7,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Persona extends Jugador implements Ficheros {
     private final Path rutaRegistrados = Paths.get(Constante.registrados);
@@ -89,7 +88,7 @@ public class Persona extends Jugador implements Ficheros {
         boolean jugadorRepe = jugadorRepetido(nombreNuevoJugador);
         if (!jugadorRepe) {
             Jugador jugador = new Persona(nombreNuevoJugador);
-            Files.write(rutaRegistrados, (jugador.getNombre()+","+jugador.getPuntuacion()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
+            Files.write(rutaRegistrados, (jugador.getNombre()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
             System.out.println("Jugador añadido");
         } else {
             System.out.println("No es posible añadir este jugador");
@@ -129,7 +128,14 @@ public class Persona extends Jugador implements Ficheros {
     public void imprimirArchivo() throws IOException {
         System.out.println("---REGISTRO JUGADORES---");
         try {
-            System.out.println(Files.readString(rutaRegistrados));
+            // Lee todas las líneas del archivo y guárdalas en una lista
+            List<String> lineas = Files.readAllLines(rutaRegistrados, StandardCharsets.UTF_8);
+            // Ordena la lista alfabéticamente
+            Collections.sort(lineas);
+            // Imprime cada línea ordenada
+            for (String linea : lineas) {
+                System.out.println(linea);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -145,33 +151,29 @@ public class Persona extends Jugador implements Ficheros {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
-        try {
-            List<String> lineas = Files.readAllLines(rutaRegistrados, StandardCharsets.UTF_8);
-            if (!lineas.isEmpty()){
-            for (String linea : lineas) {
-                String[] datos = linea.split(",");
-                String nombre = datos[0];
-                int puntuacion = Integer.parseInt(datos[1]);
-                Jugador jugador = new Jugador(nombre);
-                jugador.setPuntuacion(puntuacion);
-                listaJugadores.add(jugador);
-            }}
-        } catch (IOException e) {
-            e.printStackTrace();
+        } else {
+            try {
+                List<String> lineas = Files.readAllLines(rutaRegistrados, StandardCharsets.UTF_8);
+                listaJugadores = lineas.stream()
+                        .map(Jugador::new)
+                        .sorted(Comparator.comparing(Jugador::getNombre))
+                        .collect(Collectors.toCollection(ArrayList::new));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return listaJugadores;
+
     }
 
     @Override
     public void exportarArchivo(ArrayList<Jugador> listaJugadores) throws IOException {
         Files.deleteIfExists(rutaRegistrados);
-        Files.createFile(rutaRegistrados);
         try {
             String resgistroJugadores="";
             for (int i = 0; i < listaJugadores.size(); i++) {
                 Jugador jugador=listaJugadores.get(i);
-                resgistroJugadores+= jugador.getNombre()+","+jugador.getPuntuacion()+ System.lineSeparator();
+                resgistroJugadores+= jugador.getNombre()+ System.lineSeparator();
             }
             Files.write(rutaRegistrados, resgistroJugadores.getBytes(), StandardOpenOption.CREATE);
 
@@ -180,4 +182,5 @@ public class Persona extends Jugador implements Ficheros {
             System.out.println("Error al escribir el archivo: " + e.getMessage());
         }
     }
+
 }

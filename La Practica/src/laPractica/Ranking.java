@@ -47,56 +47,61 @@ public class Ranking implements Ficheros {
      */
     @Override
     public ArrayList<Jugador> importarArchivo() throws IOException {
+        ArrayList<Jugador> listaJugadores = new ArrayList<>();
         if (!Files.exists(rutaRanking)) {
             try {
                 Files.createFile(rutaRanking);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
-        ArrayList<Jugador> listaJugadores = new ArrayList<>();
+        } else {
+            try {//TODO: revisar para entender mejor
+                List<String> lineas = Files.readAllLines(rutaRanking, StandardCharsets.UTF_8);
+                // if (!lineas.isEmpty()) {
+                for (String linea : lineas) {
+                    if (linea.trim().isEmpty()) {
+                        continue; // Saltar líneas vacías
+                    }
 
-        try {//TODO: revisar para entender mejor
-            List<String> lineas = Files.readAllLines(rutaRanking, StandardCharsets.UTF_8);
-            for (String linea : lineas) {
-                String[] datos = linea.split(",");
-                String nombre = datos[0];
-                int puntuacion = Integer.parseInt(datos[1]);
-                Jugador jugador = new Jugador(nombre);
-                jugador.setPuntuacion(puntuacion);
-                listaJugadores.add(jugador);
+                    String[] datos = linea.split(",");
+                    if (datos.length < 2) {
+                        continue; // Saltar líneas que no tienen el formato esperado
+                    }
+                    datos = linea.split(",");
+                    String nombre = datos[0];
+                    int puntuacion = Integer.parseInt(datos[1]);
+                    Jugador jugador = new Jugador(nombre);
+                    jugador.setPuntuacion(puntuacion);
+                    listaJugadores.add(jugador);
+                }
+                //}
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
         return listaJugadores;
     }
 
     public void anhadirJugadores(ArrayList<Jugador> arrayJugadoresActuales) {
-        boolean jugadorEnRanking = false;
         arrayJugadoresActuales.removeIf(jugador -> jugador instanceof Maquina);
-
-        for (int i = 0; i < arrayJugadoresActuales.size(); i++) {
-
-            Jugador jugadorActual = arrayJugadoresActuales.get(i);
-            jugadorEnRanking = rankingJugadores.contains(jugadorActual);
-            if (jugadorEnRanking) {
-                int j = 0;
-                boolean jugadorEncontrado = false;
-                while (!jugadorEncontrado && j < rankingJugadores.size()) {
-                    jugadorEncontrado = jugadorActual.getNombre().equalsIgnoreCase(rankingJugadores.get(j).getNombre());
-                    if (!jugadorEncontrado) {
-                        j++;
+        if (!rankingJugadores.isEmpty()) {
+            for (Jugador jugadorActual : arrayJugadoresActuales) {
+                boolean nombreEncontrado = false;
+                for (Jugador jugadorRanking : rankingJugadores) {
+                    if (jugadorActual.getNombre().equals(jugadorRanking.getNombre())) {
+                        // Actualizar la puntuación sumando las puntuaciones
+                        jugadorRanking.setPuntuacion(jugadorRanking.getPuntuacion() + jugadorActual.getPuntuacion());
+                        nombreEncontrado = true;
+                        break;
                     }
                 }
-                rankingJugadores.get(j).setPuntuacion(rankingJugadores.get(j).getPuntuacion() + jugadorActual.getPuntuacion());
-            } else {
-                rankingJugadores.add(jugadorActual);
+                if (!nombreEncontrado) {
+                    // Añadir el jugadorActual a listaGrande
+                    rankingJugadores.add(jugadorActual);
+                }
             }
         }
     }
-
 
     public ArrayList<Jugador> organizarRanking() throws IOException {
 
@@ -125,7 +130,8 @@ public class Ranking implements Ficheros {
 
     public void guardarRankingPostPartida(ArrayList<Jugador> arrayFinalPartida) throws IOException {
         anhadirJugadores(arrayFinalPartida);
-        exportarArchivo(organizarRanking());
+        exportarArchivo(rankingJugadores);
+        organizarRanking();
     }
 
     public void guardarRankingAddDelete() throws IOException {

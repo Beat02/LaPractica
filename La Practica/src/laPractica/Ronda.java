@@ -51,6 +51,8 @@ public class Ronda {
                 System.out.println("La respuesta correcta es: "+pregunta.getRespuestaCorrecta());
             }
 
+        }for (int i = 0; i < arrayJugadores.size(); i++){
+            Jugador jugador=arrayJugadores.get(i);
         }
     }
 

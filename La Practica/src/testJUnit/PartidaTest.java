@@ -1,5 +1,6 @@
 package testJUnit;
 
+import laPractica.Constante;
 import laPractica.Jugador;
 import laPractica.Maquina;
 import laPractica.Partida;
@@ -28,10 +29,10 @@ public class PartidaTest {
     @DisplayName("comprobar que se imprime bien el orden de jugadores")
     void imprimirOrdenAleatorio(){
         ArrayList<Jugador> arrayJugador=new ArrayList<>();
-        Maquina pcu=new Maquina();
+        //Maquina pcu=new Maquina(Constante.pcu1);
         Jugador jug2=new Jugador("Gojo");
         Jugador jug3=new Jugador("Yuji");
-        arrayJugador.add(pcu);
+       // arrayJugador.add(pcu);
         arrayJugador.add(jug2);
         arrayJugador.add(jug3);
         partidaPrueba.imprimirOrdenAleatorio(arrayJugador);
