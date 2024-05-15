@@ -4,3 +4,6 @@ jim,1 - namy,3 -
 namy,3 - 
 choper,3 - namy,2 - 
 chip,1 - chop,0 - 
+Ada_Lovelace,0 - bwn,0 - 
+serio,3 - Ada_Lovelace,2 - 
+Katherine_Johnson,5 - Hypatia,8 - Ada_Lovelace,11 - 

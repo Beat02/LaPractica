@@ -70,7 +70,7 @@ public class Ranking implements Ficheros {
                     datos = linea.split(",");
                     String nombre = datos[0];
                     int puntuacion = Integer.parseInt(datos[1]);
-                    Jugador jugador = new Jugador(nombre);
+                    Jugador jugador = new Persona(nombre);
                     jugador.setPuntuacion(puntuacion);
                     listaJugadores.add(jugador);
                 }
@@ -142,7 +142,7 @@ public class Ranking implements Ficheros {
     }
 
     @Override
-    public void imprimirArchivo() throws IOException {
+    public void imprimirHistorico() throws IOException {
         System.out.println("---RANKING---");
         try {
             System.out.println(Files.readString(rutaRanking));

@@ -1,6 +1,7 @@
 package testJUnit;
 
 import laPractica.Jugador;
+import laPractica.Persona;
 import org.junit.jupiter.api.*;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -25,7 +26,7 @@ public class JugadorTest {
     @BeforeAll
     static void crearInstanciaJugador() {
         System.out.println("ANTES DE TODOS LOS TESTS");
-        nuevoJugador = new Jugador("Yoasabi");
+        nuevoJugador = new Persona("Yoasabi");
     }
 
     @AfterAll

@@ -1,9 +1,6 @@
 package testJUnit;
 
-import laPractica.Constante;
-import laPractica.Jugador;
-import laPractica.Maquina;
-import laPractica.Partida;
+import laPractica.*;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -30,8 +27,8 @@ public class PartidaTest {
     void imprimirOrdenAleatorio(){
         ArrayList<Jugador> arrayJugador=new ArrayList<>();
         //Maquina pcu=new Maquina(Constante.pcu1);
-        Jugador jug2=new Jugador("Gojo");
-        Jugador jug3=new Jugador("Yuji");
+        Persona jug2=new Persona("Gojo");
+        Persona jug3=new Persona("Yuji");
        // arrayJugador.add(pcu);
         arrayJugador.add(jug2);
         arrayJugador.add(jug3);
@@ -51,11 +48,11 @@ public class PartidaTest {
     @DisplayName("comprobar historico actualizado correctamente")
     void imprimirGanador(){
         ArrayList<Jugador> arrayJugadores=new ArrayList<>();
-        arrayJugadores.add(new Jugador("Kris"));
+        arrayJugadores.add(new Persona("Kris"));
         arrayJugadores.get(0).setPuntuacion(3);
-        arrayJugadores.add(new Jugador("Mar"));
+        arrayJugadores.add(new Persona("Mar"));
         arrayJugadores.get(1).setPuntuacion(9);
-        arrayJugadores.add(new Jugador("Chenoa"));
+        arrayJugadores.add(new Persona("Chenoa"));
         arrayJugadores.get(2).setPuntuacion(5);
         partidaPrueba.ganadorPartida();
 

@@ -3,6 +3,7 @@ package testJUnit;
 import static org.junit.jupiter.api.Assertions.*;
 
 import laPractica.Jugador;
+import laPractica.Persona;
 import laPractica.Ranking;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.BeforeAll;
@@ -30,14 +31,14 @@ public class RankingTest {
     @Test
     @DisplayName("comprobar que se imprime correctamente")
     void imprimirJugadoresRegistrados() throws IOException {
-        rankingPrueba.imprimirArchivo();
+        rankingPrueba.imprimirHistorico();
     }
 
     @Test
     @DisplayName("comprobar correcta importacion")
     void importarRanking() throws IOException {
-        Jugador jugador1 = new Jugador("Yuji");
-        Jugador jugador2 = new Jugador("Yoasabi");
+        Jugador jugador1 = new Persona("Yuji");
+        Jugador jugador2 = new Persona("Yoasabi");
         ArrayList<Jugador> listaJugador = rankingPrueba.getRankingJugadores();
         assertEquals(jugador1, listaJugador.get(0));
         assertEquals(jugador2, listaJugador.get(1));
@@ -54,18 +55,18 @@ public class RankingTest {
     @DisplayName("comprobar eliminacion repes")
     void anhadirJugador() throws IOException {
         rankingPrueba.getRankingJugadores().removeFirst();
-        Jugador jugador1 = new Jugador("malena");
-        Jugador jugador2 = new Jugador("Luffy");
+        Jugador jugador1 = new Persona("malena");
+        Jugador jugador2 = new Persona("Luffy");
         jugador2.setPuntuacion(4);
-        Jugador jugador3 = new Jugador("Yuji");
+        Jugador jugador3 = new Persona("Yuji");
         ArrayList<Jugador> listaJugadorPartida = new ArrayList<>();
         listaJugadorPartida.add(jugador3);
         listaJugadorPartida.add(jugador2);
         listaJugadorPartida.add(jugador1);
-        Jugador jugador4 = new Jugador("mar");
-        Jugador jugador5 = new Jugador("Luffy");
+        Jugador jugador4 = new Persona("mar");
+        Jugador jugador5 = new Persona("Luffy");
         jugador5.setPuntuacion(3);
-        Jugador jugador6 = new Jugador("Yuji");
+        Jugador jugador6 = new Persona("Yuji");
         jugador6.setPuntuacion(20);
         rankingPrueba.getRankingJugadores().add(jugador4);
         rankingPrueba.getRankingJugadores().add(jugador5);

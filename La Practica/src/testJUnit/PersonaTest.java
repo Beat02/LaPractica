@@ -21,8 +21,8 @@ public class PersonaTest {
         System.out.println("ANTES DE CADA TEST");
         Partida partida=new Partida();
        ArrayList<Jugador> arrayList= partida.getArrayJugadores();
-       arrayList.add(new Jugador("Jimmy"));
-        arrayList.add(new Jugador("Kim"));
+       arrayList.add(new Persona("Jimmy"));
+        arrayList.add(new Persona("Kim"));
 
 
     }

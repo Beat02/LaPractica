@@ -19,4 +19,8 @@ public class Constante {
     public static final String pcu2="Hypatia";
     public static final String pcu3="Katherine_Johnson";
     public static final String pcu4="Alan_Turing";
+    //
+    public static final String mates="MATES";
+    public static final String letras="LETRAS";
+    public static final String ingles="INGLES";
 }

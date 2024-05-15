@@ -39,9 +39,9 @@ public class Main {
                         ranking.guardarRankingPostPartida(arrayJugadores);
                         partida.endGame();
                     } else if (opcionJugador == 2) {
-                        ranking.imprimirArchivo();
+                        ranking.imprimirHistorico();
                     } else if (opcionJugador == 3) {
-                        partida.imprimirArchivo();
+                        partida.imprimirHistorico();
                     } else {
                         personaMenu.menuJugador();
                     }

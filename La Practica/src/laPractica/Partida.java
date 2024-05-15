@@ -1,12 +1,14 @@
 package laPractica;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Partida implements Ficheros {
     private ArrayList<Jugador> arrayJugadores;
@@ -69,6 +71,10 @@ public class Partida implements Ficheros {
 
     }
 
+    /**
+     * @return
+     * @apiNote menu inicio juego
+     */
     public int menuIncial() {
         int opcionMenu;
         System.out.println("Bienvenide a Conocer y Triunfar, tu juego de preguntas online, ¿qué quieres hacer?" +
@@ -85,10 +91,10 @@ public class Partida implements Ficheros {
     /**
      * @apiNote nos imprime el jugador ganador de la partida
      */
+    //TODO: REVISAR PORQUÉ NO FUNCIONA
     public void ganadorPartida() {
-        int maximo = Integer.MIN_VALUE;
+        int maximo = 0;
         List<String> maximaClave = new ArrayList<>();
-
         for (int i = 0; i < arrayJugadores.size(); i++) {
             int valor = arrayJugadores.get(i).getPuntuacion();
             if (valor > maximo) {
@@ -99,24 +105,25 @@ public class Partida implements Ficheros {
                 maximaClave.add(arrayJugadores.get(i).getNombre()); // Agrega a la lista de empates
             }
         }
-
-// Imprime todos los jugadores con la puntuación máxima
         for (String nombre : maximaClave) {
             System.out.println("Jugador con la mayor puntuación: " + nombre + " con una puntuación de: " + maximo);
         }
     }
 
-    public void puntuacionFinalPartida() {
-        System.out.println("El resultado final de esta partida es: " + arrayJugadores);
-    }
-
+    /**
+     * @apiNote mensaje final partida
+     */
     public void endGame() {
-        puntuacionFinalPartida();
+        System.out.println("El resultado final de esta partida es: " + arrayJugadores);
         ganadorPartida();
     }
 
+    /**
+     * @throws IOException
+     * @apiNote imprime historico partidas
+     */
     @Override
-    public void imprimirArchivo() throws IOException {
+    public void imprimirHistorico() throws IOException {
         System.out.println("---HISTORICO---");
         try {
             System.out.println(Files.readString(rutaHistorico));
@@ -125,16 +132,11 @@ public class Partida implements Ficheros {
         }
     }
 
-    @Override
-    public ArrayList<Jugador> importarArchivo() throws IOException {
-        return null;
-    }
-
-    @Override
-    public void exportarArchivo(ArrayList<Jugador> listaJugadores) throws IOException {
-
-    }
-
+    /**
+     * @param numJugadoresHumanos
+     * @throws IOException
+     * @apiNote pedimos por pantalla nombres jugadores persona
+     */
     public void nombresJugadoresHumanos(int numJugadoresHumanos) throws IOException {
         for (int i = 0; i < numJugadoresHumanos; i++) {
             System.out.println("Dime el nombre del jugador:");
@@ -165,14 +167,11 @@ public class Partida implements Ficheros {
     }
 
     /**
-     *
+     * @return total jugadores persona
+     * @throws IOException
      */
     public int jugadoresPartidaPersona() throws IOException {
-        int maxJugagores = Constante.maxJugagores;
-        int totalJugadoresPartidaActual = 0;
-        int totalJugadorMaquina = 0;
         int totalJugadorHumano = 0;
-        //pedir numero jugadores Personas
         do {
             try {
                 System.out.println("El total de jugadores posible es cuatro. ¿Cuántos jugadores humanos habrá en esta partida?");
@@ -187,17 +186,21 @@ public class Partida implements Ficheros {
                 }
             } catch (InputMismatchException exc) {
                 System.out.println("Error: Debes ingresar un valor entero válido entre 0 y 4.");
-                teclado.nextLine(); // Limpiar el búfer del scanner después de una excepción para evitar bucles infinitos
-                totalJugadorHumano = -1; // Asignar un valor inválido para que el bucle do-while continúe
+                teclado.nextLine(); // Limpiar el búfer del scanner para evitar bucles infinitos
+                totalJugadorHumano = -1; // Asignar un valor inválido para que el bucle continúe
             } catch (NoSuchElementException exc) {
                 System.out.println("Error: Debes ingresar un valor válido.");
-                teclado.nextLine(); // Limpiar el búfer del scanner después de una excepción para evitar bucles infinitos
-                totalJugadorHumano = -1; // Asignar un valor inválido para que el bucle do-while continúe
+                teclado.nextLine();
+                totalJugadorHumano = -1;
             }
         } while (totalJugadorHumano == -1);
         return totalJugadorHumano;
     }
 
+    /**
+     * @param totalJugadorHumano
+     * @apiNote adjudicamos total numero jugadores maquina
+     */
     public void jugadorPartidaMaquina(int totalJugadorHumano) {
         int totalJugadoresPartidaActual = 0;
         int totalJugadorMaquina = 0;
@@ -214,13 +217,19 @@ public class Partida implements Ficheros {
                     totalJugadorHumano = -1; // Asignar un valor inválido para que el bucle do-while continúe
                 }
             } while (totalJugadorHumano == -1);
-            totalJugadoresPartidaActual = totalJugadorHumano+totalJugadorMaquina;
+            totalJugadoresPartidaActual = totalJugadorHumano + totalJugadorMaquina;
             insertarJugadorMaquina(totalJugadoresPartidaActual, totalJugadorMaquina, totalJugadorHumano);
         }
 
     }
 
-    private void insertarJugadorMaquina(int totalJugadoresPartidaActual, int totalJugadorMaquina, int totalJugadorHumano) {
+    /**
+     * @param totalJugadoresPartidaActual
+     * @param totalJugadorMaquina
+     * @param totalJugadorHumano
+     * @apiNote asigna los jugadores maquina
+     */
+    public void insertarJugadorMaquina(int totalJugadoresPartidaActual, int totalJugadorMaquina, int totalJugadorHumano) {
         while (maxJugagores <= totalJugadoresPartidaActual) {
             System.out.println("El valor introducido es incorrecto" + "\n" +
                     "RECUERDA: EL VALOR MÍNIMO DE JUGADORES TOTALES ES 1 Y EL MÁXIMO ES 4" +
@@ -233,5 +242,16 @@ public class Partida implements Ficheros {
             maquina.setNombre(i);
             arrayJugadores.add(maquina);
         }
+
+    }
+
+    @Override
+    public ArrayList<Jugador> importarArchivo() throws IOException {
+        return null;
+    }
+
+    @Override
+    public void exportarArchivo(ArrayList<Jugador> listaJugadores) throws IOException {
+
     }
 }

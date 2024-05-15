@@ -1,9 +1,37 @@
 package laPractica;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Ronda {
+    private ArrayList<String> tipoPregunta = new ArrayList<>();
+
+    public Ronda() {
+        tipoPregunta = new ArrayList<>();
+        tipoPregunta.add(Constante.mates);
+        tipoPregunta.add(Constante.ingles);
+        tipoPregunta.add(Constante.letras);
+    }
+
+    public ArrayList<String> getTipoPregunta() {
+        return tipoPregunta;
+    }
+
+    public Pregunta tipoPreguntaRandom() {
+        Collections.shuffle(tipoPregunta);
+        Pregunta pregunta = null;
+        if (tipoPregunta.getFirst().equalsIgnoreCase(Constante.mates)) {
+            pregunta = new PreguntaMatematicas();
+        }
+        else if (tipoPregunta.getFirst().equalsIgnoreCase(Constante.ingles)) {
+            pregunta = new PreguntaIngles();
+        } else {
+            pregunta = new PreguntaLetras();
+        }
+        return pregunta;
+
+    }
 
     /**
      * @return int con número de rondas
@@ -33,26 +61,14 @@ public class Ronda {
         }
         return totalRondas;
     }
-    public void jugarRonda(ArrayList<Jugador> arrayJugadores){
-        Scanner teclado=new Scanner(System.in);
+
+    public void jugarRonda(ArrayList<Jugador> arrayJugadores) {
         for (int i = 0; i < arrayJugadores.size(); i++) {
-            Jugador jugador=arrayJugadores.get(i);
-            Pregunta pregunta=new PreguntaMatematicas();
-            System.out.println("Es el turno de: "+jugador.getNombre());
-            System.out.println(pregunta.getEnunciadoPregunta());
-            String respuestaPorTeclado= teclado.next();
-            boolean aciertoPregunta=pregunta.getRespuestaCorrecta().equalsIgnoreCase(respuestaPorTeclado);
-
-            if (aciertoPregunta){
-                System.out.println("¡Has acertado! :)");
-                jugador.setPuntuacion(jugador.getPuntuacion()+1);
-            } else if (!aciertoPregunta) {
-                System.out.println("Has fallado :(");
-                System.out.println("La respuesta correcta es: "+pregunta.getRespuestaCorrecta());
-            }
-
-        }for (int i = 0; i < arrayJugadores.size(); i++){
-            Jugador jugador=arrayJugadores.get(i);
+            Jugador jugador = arrayJugadores.get(i);
+            Pregunta pregunta = tipoPreguntaRandom();
+            System.out.println("Es el turno de: " + jugador.getNombre());
+            System.out.println(pregunta.enunciadoRespuesta.getEnunciado());
+            jugador.elegirRespuesta(pregunta);
         }
     }
 

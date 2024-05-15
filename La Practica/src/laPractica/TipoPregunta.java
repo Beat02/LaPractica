@@ -1,5 +1,7 @@
 package laPractica;
 
+import java.util.ArrayList;
+
 public class TipoPregunta {
     private String tipo;
 

@@ -1,6 +1,5 @@
 package laPractica;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -12,11 +11,10 @@ import java.util.stream.Collectors;
 
 public class Persona extends Jugador implements Ficheros {
     private final Path rutaRegistrados = Paths.get(Constante.registrados);
-
     public Persona(String nombre) {
         super(nombre);
     }
-
+    final Scanner teclado=new Scanner(System.in);
 
     public int menuJugador() throws IOException {
         if (!Files.exists(rutaRegistrados)) {
@@ -40,7 +38,7 @@ public class Persona extends Jugador implements Ficheros {
         while (opcionMenu < 4 && opcionMenu > 0) {
             switch (opcionMenu) {
                 case 1:
-                    imprimirArchivo();
+                    imprimirHistorico();
                     opcionMenu = menuJugador();
                     break;
                 case 2:
@@ -60,7 +58,7 @@ public class Persona extends Jugador implements Ficheros {
      * @return si es false es que NO está repetido, si es TRUE es que SI está repetido
      */
     public boolean jugadorRepetido(String nombre) throws IOException {
-        Jugador nuevoJugador = new Jugador(nombre);
+        Jugador nuevoJugador = new Persona(nombre);
         ArrayList<Jugador> listaJugadores = importarArchivo();
         boolean mismoJugador = false;
         if (!listaJugadores.isEmpty()) {
@@ -68,9 +66,6 @@ public class Persona extends Jugador implements Ficheros {
             while (!mismoJugador && i < listaJugadores.size()) {
                 mismoJugador = nuevoJugador.getNombre().equalsIgnoreCase(listaJugadores.get(i).getNombre());
                 i++;
-            }
-            if (!mismoJugador) {
-                System.out.println("El jugador no se encuentra en el registro");
             }
             if (mismoJugador) {
                 System.out.println("Este jugador se encuentra en el registro");
@@ -125,7 +120,7 @@ public class Persona extends Jugador implements Ficheros {
     }
 
     @Override
-    public void imprimirArchivo() throws IOException {
+    public void imprimirHistorico() throws IOException {
         System.out.println("---REGISTRO JUGADORES---");
         try {
             // Lee todas las líneas del archivo y guárdalas en una lista
@@ -155,7 +150,7 @@ public class Persona extends Jugador implements Ficheros {
             try {
                 List<String> lineas = Files.readAllLines(rutaRegistrados, StandardCharsets.UTF_8);
                 listaJugadores = lineas.stream()
-                        .map(Jugador::new)
+                        .map(Persona::new)
                         .sorted(Comparator.comparing(Jugador::getNombre))
                         .collect(Collectors.toCollection(ArrayList::new));
             } catch (IOException e) {
@@ -181,6 +176,12 @@ public class Persona extends Jugador implements Ficheros {
         } catch (IOException e) {
             System.out.println("Error al escribir el archivo: " + e.getMessage());
         }
+    }
+    @Override
+    public void elegirRespuesta(Pregunta pregunta) {
+        String respuesta = teclado.nextLine();
+        logger.info("[" + java.time.LocalDate.now() + "][" + java.time.LocalTime.now() + "]: " + this.getNombre() + " ha elegido la respuesta: " + respuesta);
+        resultadoRespuesta(respuesta, pregunta.getEnunciadoRespuesta().getRespuesta());
     }
 
 }

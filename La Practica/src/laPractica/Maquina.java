@@ -23,6 +23,22 @@ public class Maquina extends Jugador {
     private ArrayList<String> getlistaNombres() {
         return listaNombres;
     }
+    public void elegirRespuesta(Pregunta pregunta) {
+        String respuesta = "";
+        switch (pregunta.tipoPregunta.getTipo()) {
+            case "Mates":
+                respuesta = pregunta.getEnunciadoRespuesta().getRespuesta();
+                break;
+            case "Letras":
+                respuesta = Util.RandomString();
+                break;
+            case "Ingles":
+                respuesta = Util.RandomBetweenAandD();
+                break;
+        }
+        resultadoRespuesta(respuesta, pregunta.getEnunciadoRespuesta().getRespuesta());
+    }
+
 
     @Override
     public String getNombre() {
