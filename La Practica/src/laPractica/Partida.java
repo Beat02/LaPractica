@@ -161,44 +161,67 @@ public class Partida implements Ficheros {
                 arrayJugadores.add(new Persona(nombreJugador));
             }
         }
-        System.out.println("Ya tenemos listos a los jugadores humanos");
+        System.out.println("Perfecto, ya casi estamos");
     }
 
     /**
      *
      */
-    public void jugadoresPartida() throws IOException {
+    public int jugadoresPartidaPersona() throws IOException {
         int maxJugagores = Constante.maxJugagores;
         int totalJugadoresPartidaActual = 0;
         int totalJugadorMaquina = 0;
-        //pedir numero jugadores HUMANOS
-        System.out.println("El total de jugadores posible es cuatro, y de esos cuatro, puedes escoger cuantos son humanos y cuantos son máquinas" + '\n'
-                + "¿Cuántos jugadores humanos habrá en esta partida?");
-        int totalJugadorHumano = teclado.nextInt();
-        if (totalJugadorHumano > 1 && totalJugadorHumano < 4) {
-            nombresJugadoresHumanos(totalJugadorHumano);
+        int totalJugadorHumano = 0;
+        //pedir numero jugadores Personas
+        do {
+            try {
+                System.out.println("El total de jugadores posible es cuatro. ¿Cuántos jugadores humanos habrá en esta partida?");
+                totalJugadorHumano = teclado.nextInt();
+                if (totalJugadorHumano < 0 || totalJugadorHumano > 4) {
+                    throw new InputMismatchException("Error: Debes ingresar un valor entre 1 y 4.");
+                }
+                if (totalJugadorHumano == 0) {
+                    break;
+                } else {
+                    nombresJugadoresHumanos(totalJugadorHumano);
+                }
+            } catch (InputMismatchException exc) {
+                System.out.println("Error: Debes ingresar un valor entero válido entre 0 y 4.");
+                teclado.nextLine(); // Limpiar el búfer del scanner después de una excepción para evitar bucles infinitos
+                totalJugadorHumano = -1; // Asignar un valor inválido para que el bucle do-while continúe
+            } catch (NoSuchElementException exc) {
+                System.out.println("Error: Debes ingresar un valor válido.");
+                teclado.nextLine(); // Limpiar el búfer del scanner después de una excepción para evitar bucles infinitos
+                totalJugadorHumano = -1; // Asignar un valor inválido para que el bucle do-while continúe
+            }
+        } while (totalJugadorHumano == -1);
+        return totalJugadorHumano;
+    }
+
+    public void jugadorPartidaMaquina(int totalJugadorHumano) {
+        int totalJugadoresPartidaActual = 0;
+        int totalJugadorMaquina = 0;
+        if (totalJugadorHumano > 0 || totalJugadorHumano < 4) {
             totalJugadoresPartidaActual = maxJugagores - totalJugadorHumano;
             System.out.println("Ya hay " + totalJugadorHumano + " jugadores humanos, puedes incluir hasta " +
                     totalJugadoresPartidaActual + " jugadores máquina, escribe cuantos quieres:");
-            totalJugadorMaquina = teclado.nextInt();
-            totalJugadoresPartidaActual += totalJugadorMaquina;
+            do {
+                try {
+                    totalJugadorMaquina = teclado.nextInt();
+                } catch (NoSuchElementException exc) {
+                    System.out.println("Error: Debes ingresar un valor válido.");
+                    teclado.nextLine(); // Limpiar el búfer del scanner después de una excepción para evitar bucles infinitos
+                    totalJugadorHumano = -1; // Asignar un valor inválido para que el bucle do-while continúe
+                }
+            } while (totalJugadorHumano == -1);
+            totalJugadoresPartidaActual = totalJugadorHumano+totalJugadorMaquina;
             insertarJugadorMaquina(totalJugadoresPartidaActual, totalJugadorMaquina, totalJugadorHumano);
-        } else if (totalJugadorHumano == 1) {
-            nombresJugadoresHumanos(totalJugadorHumano);
-            System.out.println("Solo hay un jugador humano, si quieres, puedes incluir hasta tres jugadores máquina, escribe cuantos quieres:");
-            totalJugadorMaquina = teclado.nextInt();
-            insertarJugadorMaquina(totalJugadoresPartidaActual, totalJugadorMaquina, totalJugadorHumano);
-        } else if (totalJugadorHumano == 0) {
-            System.out.println("Veo que en esta partida quiere ver jugar a la máquina, ¿cuántas quieres que jueguen?");
-            totalJugadorMaquina = teclado.nextInt();
-            insertarJugadorMaquina(totalJugadoresPartidaActual, totalJugadorMaquina, totalJugadorHumano);
-
         }
 
     }
 
     private void insertarJugadorMaquina(int totalJugadoresPartidaActual, int totalJugadorMaquina, int totalJugadorHumano) {
-        while (maxJugagores < totalJugadoresPartidaActual) {
+        while (maxJugagores <= totalJugadoresPartidaActual) {
             System.out.println("El valor introducido es incorrecto" + "\n" +
                     "RECUERDA: EL VALOR MÍNIMO DE JUGADORES TOTALES ES 1 Y EL MÁXIMO ES 4" +
                     "\n" + "prueba otra vez:");

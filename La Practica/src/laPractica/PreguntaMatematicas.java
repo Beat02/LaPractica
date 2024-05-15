@@ -1,28 +1,29 @@
 package laPractica;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class PreguntaMatematicas extends Pregunta{
-
+    private final String[] arraySimbolos = {"+", "-", "*"};
+    private final int[] rangoDeNumerosMaximo = {2, 12};
+    private final int[] rangoDeNumerosMaximoEnCalculo = {4, 8};
 
     public PreguntaMatematicas() {
-        super();
+        super(new TipoPregunta("Mates"));
+        enunciadoRespuesta = generarCalculoAleatorio();
     }
 
-    /**
-     *
-     * @return
-     */
-    //TODO: falta montarla entera
-    @Override
-    public String getEnunciadoPregunta() {
-       String enunciadoPregunta=crearEnunciadoPregunta();
-        return enunciadoPregunta;
-    }
-    public String crearEnunciadoPregunta(){
-        String enunciado="2+2";
-        return enunciado;
-    }
-    public String getRespuestaCorrecta(){
-        String respuesta="4";
-        return respuesta;
+    private EnunciadoRespuesta generarCalculoAleatorio(){
+        int cantidadNumeros = (int)(Math.random() * (rangoDeNumerosMaximoEnCalculo[1] - rangoDeNumerosMaximoEnCalculo[0] + 1) + rangoDeNumerosMaximoEnCalculo[0]);
+        String calculo = "";
+        for (int i = 0; i < cantidadNumeros; i++) {
+            calculo += (int)(Math.random() * (rangoDeNumerosMaximo[1] - rangoDeNumerosMaximo[0] + 1) + rangoDeNumerosMaximo[0]);
+            if (i < cantidadNumeros - 1) {
+                calculo += arraySimbolos[(int)(Math.random() * arraySimbolos.length)];
+            }
+        }
+        Expression expression = new ExpressionBuilder(calculo).build();
+        int resultado = (int)expression.evaluate();
+        System.out.println("Resultado: " + resultado);
+        return new EnunciadoRespuesta(calculo, String.valueOf(resultado));
     }
 }

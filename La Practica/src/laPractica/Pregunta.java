@@ -1,18 +1,16 @@
 package laPractica;
 
 public abstract class Pregunta {
-    private String enunciadoPregunta;
-    private String respuestaCorrecta;
+    EnunciadoRespuesta enunciadoRespuesta;
+    TipoPregunta tipoPregunta;
 
-    public Pregunta() {
-
+    public Pregunta(TipoPregunta tipoPregunta){
+        this.enunciadoRespuesta = null;
+        this.tipoPregunta = tipoPregunta;
     }
 
-    public abstract String getEnunciadoPregunta();
-
-    public void setEnunciadoPregunta(String enunciadoPregunta) {
-        this.enunciadoPregunta = enunciadoPregunta;
+    public EnunciadoRespuesta getEnunciadoRespuesta(){
+        return enunciadoRespuesta;
     }
-    public abstract String getRespuestaCorrecta();
 }
 
