@@ -15,6 +15,10 @@ public class PreguntaLetras extends Pregunta{
         enunciadoRespuesta = new EnunciadoRespuesta("Adivina la palabra: "+ocultarLetrasDePalabraAleatorio(), palabra);
     }
 
+    /**
+     *
+     * @return
+     */
     private String obtenerPalabraAleatoria() {
         String palabra = "";
         try {

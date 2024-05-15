@@ -17,6 +17,7 @@ public class PreguntaIngles extends Pregunta{
     private final String[] ABCD = {"A", "B", "C", "D"};
     private int respuestaCorrecta;
 
+
     public PreguntaIngles() {
         super(new TipoPregunta("Ingles"));
         obtenerPreguntaAleatoria();
@@ -24,20 +25,27 @@ public class PreguntaIngles extends Pregunta{
         enunciadoRespuesta = new EnunciadoRespuesta(pregunta+"\n"+respuestasEnLinea, ABCD[respuestaCorrecta]);
     }
 
+    /**
+     *@apiNote con esto obtenemos una pregunta aleatoria
+     */
     private void obtenerPreguntaAleatoria() {
         try {
             long total = Files.lines(ingles).count();
             int aleatorio = (int)(Math.random() * (total / 5));
-            pregunta = Files.lines(ingles).skip(aleatorio * 5).findFirst().get();
+            pregunta = Files.lines(ingles).skip(aleatorio * 5L).findFirst().get();
             respuestas = new String[4];
             for (int i = 0; i < 4; i++) {
-                respuestas[i] = Files.lines(ingles).skip(aleatorio * 5 + i + 1).findFirst().get();
+                respuestas[i] = Files.lines(ingles).skip(aleatorio * 5L + i + 1).findFirst().get();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     *
+     * @return string con las opciones de respuestas reordenadas
+     */
     private String reordenarRespuestas() {
         List<String> listaRespuestas = new ArrayList<>(Arrays.asList(respuestas));
         Collections.shuffle(listaRespuestas);

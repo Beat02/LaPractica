@@ -5,3 +5,5 @@ sergio,1 - bea,1 - Ada_Lovelace,1 -
 bea,3 - Ada_Lovelace,1 - sergio,1 - 
 bea,1 - Ada_Lovelace,2 - sergio,2 - 
 bea,2 - Ada_Lovelace,1 - sergio,2 - 
+Ada_Lovelace,1 - sergio,1 - bea,0 - 
+Ada_Lovelace,0 - Hypatia,1 - Katherine_Johnson,1 - 

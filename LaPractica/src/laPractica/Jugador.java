@@ -1,10 +1,5 @@
 package laPractica;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.logging.Logger;
 
@@ -17,15 +12,9 @@ public abstract class Jugador {
         this.nombre = nombre;
         this.puntuacion = 0;
     }
-
-    public Jugador() {
-
-    }
-
     public String getNombre() {
         return nombre;
     }
-
 
     public int getPuntuacion() {
         return puntuacion;
@@ -37,6 +26,11 @@ public abstract class Jugador {
 
     public abstract void elegirRespuesta(Pregunta pregunta);
 
+    /**
+     * @apiNote segun la respuesta del jugador, añade puntos o no
+     * @param respuesta
+     * @param respuestaDelEnunciado
+     */
     public void resultadoRespuesta(String respuesta, String respuestaDelEnunciado) {
         respuestaDelEnunciado = respuestaDelEnunciado.toLowerCase();
         if (respuesta.toLowerCase().equals(respuestaDelEnunciado)) {
