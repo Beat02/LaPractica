@@ -11,11 +11,18 @@ import java.util.stream.Collectors;
 
 public class Persona extends Jugador implements Ficheros {
     private final Path rutaRegistrados = Paths.get(Constante.registrados);
+
     public Persona(String nombre) {
         super(nombre);
     }
-    final Scanner teclado=new Scanner(System.in);
 
+    final Scanner teclado = new Scanner(System.in);
+
+    /**
+     * @return int con la opcion del menu seleccionado
+     * @throws IOException al haber un Input mismatch
+     * @apiNote menu jugador
+     */
     public int menuJugador() throws IOException {
         if (!Files.exists(rutaRegistrados)) {
             Files.createFile(rutaRegistrados);
@@ -74,6 +81,10 @@ public class Persona extends Jugador implements Ficheros {
         return mismoJugador;
     }
 
+    /**
+     * @throws IOException al escribir en el fichero JugadoresRegistrados.txt si hay error
+     * @apiNote añade jugador al fichero de registro
+     */
     public void anhadirJugador() throws IOException {
         String nombreNuevoJugador;
         Scanner teclado = new Scanner(System.in);
@@ -83,13 +94,17 @@ public class Persona extends Jugador implements Ficheros {
         boolean jugadorRepe = jugadorRepetido(nombreNuevoJugador);
         if (!jugadorRepe) {
             Jugador jugador = new Persona(nombreNuevoJugador);
-            Files.write(rutaRegistrados, (jugador.getNombre()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
+            Files.write(rutaRegistrados, (jugador.getNombre() + System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
             System.out.println("Jugador añadido");
         } else {
             System.out.println("No es posible añadir este jugador");
         }
     }
 
+    /**
+     * @throws IOException en los metodos internos
+     * @apiNote elimina jugador del registro
+     */
     public void eliminarJugador() throws IOException {
         String nombreEliminarJugador;
         Scanner teclado = new Scanner(System.in);
@@ -119,6 +134,10 @@ public class Persona extends Jugador implements Ficheros {
         }
     }
 
+    /**
+     * @throws IOException si hay problemas al leer las lineas
+     * @apiNote imprime historico de partidas
+     */
     @Override
     public void imprimirHistorico() throws IOException {
         System.out.println("---REGISTRO JUGADORES---");
@@ -136,6 +155,11 @@ public class Persona extends Jugador implements Ficheros {
         }
     }
 
+    /**
+     * @return devuelve un ArrayList con los jugadores que están el el fichero JugadoresRegistrados.txt
+     * @throws IOException si hay errores con la creacion del fichero o al pasar de la linea al ArrayList
+     * @apiNote
+     */
     @Override
     public ArrayList<Jugador> importarArchivo() throws IOException {
         ArrayList<Jugador> listaJugadores = new ArrayList<>();
@@ -161,14 +185,18 @@ public class Persona extends Jugador implements Ficheros {
 
     }
 
+    /**
+     * @param listaJugadores array con los jugadores
+     * @throws IOException si hay un error al escribir en el fichero JugadoresRegistrados.txt
+     * @apiNote escribimos el arrayList en el fichero JugadoresRegistrados.txt
+     */
     @Override
     public void exportarArchivo(ArrayList<Jugador> listaJugadores) throws IOException {
         Files.deleteIfExists(rutaRegistrados);
         try {
-            String resgistroJugadores="";
-            for (int i = 0; i < listaJugadores.size(); i++) {
-                Jugador jugador=listaJugadores.get(i);
-                resgistroJugadores+= jugador.getNombre()+ System.lineSeparator();
+            String resgistroJugadores = "";
+            for (Jugador jugador : listaJugadores) {
+                resgistroJugadores += jugador.getNombre() + System.lineSeparator();
             }
             Files.write(rutaRegistrados, resgistroJugadores.getBytes(), StandardOpenOption.CREATE);
 
@@ -177,11 +205,15 @@ public class Persona extends Jugador implements Ficheros {
             System.out.println("Error al escribir el archivo: " + e.getMessage());
         }
     }
+
+    /**
+     * @param pregunta objeto de pregunta con el tipo ya escogido
+     * @apiNote respuesta del jugador persona a las preguntas
+     */
     @Override
     public void elegirRespuesta(Pregunta pregunta) {
         String respuesta = teclado.nextLine();
         logger.info("[" + java.time.LocalDate.now() + "][" + java.time.LocalTime.now() + "]: " + this.getNombre() + " ha elegido la respuesta: " + respuesta);
         resultadoRespuesta(respuesta, pregunta.getEnunciadoRespuesta().getRespuesta());
     }
-
 }

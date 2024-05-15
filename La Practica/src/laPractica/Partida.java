@@ -1,14 +1,12 @@
 package laPractica;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Partida implements Ficheros {
     private ArrayList<Jugador> arrayJugadores;
@@ -220,7 +218,6 @@ public class Partida implements Ficheros {
             totalJugadoresPartidaActual = totalJugadorHumano + totalJugadorMaquina;
             insertarJugadorMaquina(totalJugadoresPartidaActual, totalJugadorMaquina, totalJugadorHumano);
         }
-
     }
 
     /**
@@ -230,7 +227,7 @@ public class Partida implements Ficheros {
      * @apiNote asigna los jugadores maquina
      */
     public void insertarJugadorMaquina(int totalJugadoresPartidaActual, int totalJugadorMaquina, int totalJugadorHumano) {
-        while (maxJugagores <= totalJugadoresPartidaActual) {
+        while (maxJugagores < totalJugadoresPartidaActual) {
             System.out.println("El valor introducido es incorrecto" + "\n" +
                     "RECUERDA: EL VALOR MÍNIMO DE JUGADORES TOTALES ES 1 Y EL MÁXIMO ES 4" +
                     "\n" + "prueba otra vez:");
@@ -238,7 +235,7 @@ public class Partida implements Ficheros {
             totalJugadoresPartidaActual = totalJugadorHumano + totalJugadorMaquina;
         }
         for (int i = 0; i < totalJugadorMaquina; i++) {
-            Maquina maquina = new Maquina();
+            Maquina maquina = new Maquina(null);
             maquina.setNombre(i);
             arrayJugadores.add(maquina);
         }

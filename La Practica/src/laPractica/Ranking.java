@@ -83,9 +83,11 @@ public class Ranking implements Ficheros {
     }
 
     public void anhadirJugadores(ArrayList<Jugador> arrayJugadoresActuales) {
-        arrayJugadoresActuales.removeIf(jugador -> jugador instanceof Maquina);
         if (!rankingJugadores.isEmpty()) {
             for (Jugador jugadorActual : arrayJugadoresActuales) {
+                if (jugadorActual instanceof Maquina){
+                    continue;
+                }
                 boolean nombreEncontrado = false;
                 for (Jugador jugadorRanking : rankingJugadores) {
                     if (jugadorActual.getNombre().equals(jugadorRanking.getNombre())) {
@@ -131,7 +133,9 @@ public class Ranking implements Ficheros {
     public void guardarRankingPostPartida(ArrayList<Jugador> arrayFinalPartida) throws IOException {
         anhadirJugadores(arrayFinalPartida);
         exportarArchivo(rankingJugadores);
+        importarArchivo();
         organizarRanking();
+        exportarArchivo(rankingJugadores);
     }
 
     public void guardarRankingAddDelete() throws IOException {
