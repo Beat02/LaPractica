@@ -1,0 +1,190 @@
+Which programming language is named after a comedy sketch group?
+Python
+Ruby
+Perl
+Swift
+What does the "B" in "Bash" stand for?
+Bourne
+Batch
+Bashful
+Basic
+What technology allows you to run software in containers?
+Docker
+VirtualBox
+Kubernetes
+Hyper-V
+Which programming language is named after a famous mathematician?
+Ada
+Pascal
+Lisp
+COBOL
+Which language has a mascot that's a camel?
+Perl
+C++
+Go
+JavaScript
+Which technology lets you code and drink coffee at the same time?
+Java
+Python
+Cocoa
+Espresso
+Which pattern describes a scenario where one computer manages others that follow its instructions?
+Master-Slave
+Boss-Employee
+Leader-Follower
+Captain-Crew
+What JavaScript library brings a component-based approach to UI design?
+React
+Angular
+Vue
+Ember
+Which programming language has a name that reminds you of coffee?
+Java
+C#
+Swift
+Go
+Which database technology has a green leaf as its symbol?
+MongoDB
+Redis
+Oracle
+SQLite
+What technology is most commonly associated with exploring virtual worlds?
+Virtual Reality
+Augmented Reality
+Artificial Intelligence
+Machine Learning
+Which smart home assistant is known for its "skills"?
+Amazon Alexa
+Google Assistant
+Apple Siri
+Microsoft Cortana
+What tech gadget lets you track your daily steps and heart rate?
+Fitness Tracker
+Smart Watch
+Smart Glasses
+Smart Ring
+Which technology uses a distributed ledger to track transactions?
+Blockchain
+Cloud Computing
+Internet of Things
+Quantum Computing
+What tech innovation is often used to create lifelike 3D printed models?
+3D Printing
+Virtual Reality
+Augmented Reality
+Drones
+What technology is used to create virtual companions and chatbots?
+Artificial Intelligence
+Blockchain
+Big Data
+Quantum Computing
+What term describes a digital reality where you can buy virtual land and interact with avatars?
+Metaverse
+Cyberspace
+Virtual Environment
+Augmented Reality
+What is the term for technology that learns from data to improve its performance over time?
+Machine Learning
+Deep Learning
+Neural Networks
+Artificial Intelligence
+Which technology enables smart cities to connect and manage infrastructure remotely?
+Internet of Things
+Edge Computing
+Quantum Computing
+Blockchain
+What tech gadget is most likely to tell you to "stand up and move"?
+Smart Watch
+Smart Phone
+Smart Speaker
+Smart TV
+Which electronic device might be mistaken for a tiny microwave?
+Toaster Oven
+Laptop
+Air Fryer
+Router
+What do you call the person responsible for turning a computer on and off again?
+IT Support
+Project Manager
+CEO
+Front-End Developer
+Which technology lets you ask for jokes and music by talking to it?
+Smart Speaker
+Fitness Tracker
+VR Headset
+Drone
+What type of tech is most likely to have a case with a unicorn on it?
+Smart Phone
+Game Console
+Desktop Computer
+Server Rack
+Which tech innovation is best for spying on your cat while you're away?
+Home Security Camera
+Drone
+Fitness Tracker
+Smart Plug
+What would you use if you wanted to fly a tiny aircraft from your backyard?
+Drone
+Kite
+Remote-Controlled Car
+WiFi Router
+What gadget is most likely to suggest a nap if you're tired?
+Smart Watch
+Smart Phone
+Smart Speaker
+Smart Light
+What tech device is the best for watching endless cat videos?
+Smart Phone
+Smart Speaker
+Smart Plug
+Fitness Tracker
+Why did the tomato turn red?
+It saw the salad dressing.
+It was scared of a carrot.
+It got angry at a potato.
+It went out in the sun without sunscreen.
+What do you call a fish with no eyes?
+Fsh.
+Blindfish.
+Vision-impaired fish.
+Eyeless eel.
+What's brown and sticky?
+A stick.
+Chocolate syrup.
+Melted caramel.
+A mud pie.
+Why did the chicken join a band?
+Because it had the drumsticks.
+It wanted to play the guitar.
+It couldn't find a job on the farm.
+It thought it could sing.
+Why don't eggs tell each other secrets?
+They might crack under pressure.
+They have shell phones.
+They're too hard-boiled.
+They're always scrambled.
+What do you call a bear with no teeth?
+A gummy bear.
+A toothless grizzly.
+A soft bear.
+A cuddly cub.
+What did one wall say to the other wall?
+I'll meet you at the corner.
+Don't let the door hit you.
+We're up against it.
+Let's paint the town.
+Why do elephants never use computers?
+They're afraid of mice.
+Their trunks are too big for the keyboard.
+They'd break the mouse.
+They can't sit at a desk.
+What did the scarf say to the hat?
+You go on ahead, I'll hang around.
+I think you're a cap-tivating accessory.
+I'm feeling a little tied up.
+I'm just warming up.
+Why was the math book sad?
+It had too many problems.
+It couldn't solve its equations.
+It was tired of geometry.
+It needed a break.
