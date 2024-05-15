@@ -89,7 +89,6 @@ public class Partida implements Ficheros {
     /**
      * @apiNote nos imprime el jugador ganador de la partida
      */
-    //TODO: REVISAR PORQUÉ NO FUNCIONA
     public void ganadorPartida() {
         int maximo = 0;
         List<String> maximaClave = new ArrayList<>();
