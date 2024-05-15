@@ -17,7 +17,10 @@ public class Main {
                 Ranking ranking = new Ranking();
                 Persona personaMenu = new Persona("menu");
                 int opcionJugador = partida.menuIncial();
-
+                while (opcionJugador>5 || opcionJugador<0){
+                    System.out.println("Ese valor no es válido, prueba otra vez");
+                    opcionJugador= teclado.nextInt();
+                }
                 while (opcionJugador > 0 && opcionJugador < 6) {
                     ArrayList<Jugador> arrayJugadores = partida.getArrayJugadores();
                     arrayJugadores.clear();
@@ -39,9 +42,9 @@ public class Main {
                         ranking.guardarRankingPostPartida(arrayJugadores);
                         partida.endGame();
                     } else if (opcionJugador == 2) {
-                        ranking.imprimirHistorico();
+                        ranking.imprimirFichero();
                     } else if (opcionJugador == 3) {
-                        partida.imprimirHistorico();
+                        partida.imprimirFichero();
                     } else if (opcionJugador == 4) {
                         personaMenu.menuJugador();
                     } else if (opcionJugador == 5) {
@@ -57,8 +60,6 @@ public class Main {
             }
         } while (true); // Continuar el bucle hasta que se proporcione una entrada válida
     }
-
-
 }
 
 

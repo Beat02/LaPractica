@@ -142,7 +142,7 @@ public class Ranking implements Ficheros {
     }
 
     @Override
-    public void imprimirHistorico() throws IOException {
+    public void imprimirFichero() throws IOException {
         System.out.println("---RANKING---");
         try {
             System.out.println(Files.readString(rutaRanking));
