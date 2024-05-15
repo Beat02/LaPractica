@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Persona extends Jugador implements Ficheros {
-    private final Path rutaRegistrados = Paths.get(Constante.registrados);
+    private final Path rutaRegistrados = Paths.get(Constante.REGISTRADOS);
 
     public Persona(String nombre) {
         super(nombre);
@@ -95,6 +95,7 @@ public class Persona extends Jugador implements Ficheros {
         if (!jugadorRepe) {
             Jugador jugador = new Persona(nombreNuevoJugador);
             Files.write(rutaRegistrados, (jugador.getNombre() + System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
+            MiLogger.log("Jugador añadido al registro de jugadores: " + jugador.getNombre());
             System.out.println("Jugador añadido");
         } else {
             System.out.println("No es posible añadir este jugador");
@@ -126,11 +127,13 @@ public class Persona extends Jugador implements Ficheros {
                     listaJugadores.remove(i);
                     exportarArchivo(listaJugadores);
                     System.out.println("Jugador eliminado del registro y del ranking");
+                    MiLogger.log("Jugador eliminado del registro de jugadores: " + nombreEliminarJugador);
                     return;
                 }
             }
         } else {
             System.out.println("No es posible eliminar un jugador que no se encuentra en el registro");
+            MiLogger.log("ERROR. No se ha podido eliminar el jugador del registro de jugadores: " + nombreEliminarJugador);
         }
     }
 
@@ -213,7 +216,7 @@ public class Persona extends Jugador implements Ficheros {
     @Override
     public void elegirRespuesta(Pregunta pregunta) {
         String respuesta = teclado.nextLine();
-        logger.info("[" + java.time.LocalDate.now() + "][" + java.time.LocalTime.now() + "]: " + this.getNombre() + " ha elegido la respuesta: " + respuesta);
+        MiLogger.log(this.getNombre() + " ha elegido la respuesta: " + respuesta);
         resultadoRespuesta(respuesta, pregunta.getEnunciadoRespuesta().getRespuesta());
     }
 }

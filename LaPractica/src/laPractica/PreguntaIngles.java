@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PreguntaIngles extends Pregunta{
 
-    private final Path ingles = Paths.get("LaPractica/src/laPractica/ingles.txt");
+    private final Path ingles = Paths.get(Constante.INGLES_TXT);
     private String pregunta;
     private String[] respuestas;
     private final String[] ABCD = {"A", "B", "C", "D"};

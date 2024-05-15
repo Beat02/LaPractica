@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class Ranking implements Ficheros {
     private ArrayList<Jugador> rankingJugadores;
-    private final Path rutaRanking = Paths.get(Constante.ranking);
+    private final Path rutaRanking = Paths.get(Constante.RANKING);
 
     public Ranking() throws IOException {
         this.rankingJugadores = importarArchivo();

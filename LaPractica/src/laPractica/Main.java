@@ -32,6 +32,8 @@ public class Main {
                         partida.imprimirOrdenAleatorio(arrayJugadores);
                         //rondas
                         System.out.println("Perfecto, ya sabemos los jugadores");
+                        MiLogger.log("Inicio de la partida con " + jugadoresPartidaPersona +
+                                " jugadores humanos" + " y " + partida.getArrayJugadores().size() + " jugadores en total");
                         Ronda ronda = new Ronda();
                         int numRondas = ronda.menuNumRondas();
                         for (int i = 0; i < numRondas; i++) {

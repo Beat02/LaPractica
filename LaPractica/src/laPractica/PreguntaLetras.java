@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class PreguntaLetras extends Pregunta{
-    private final Path diccionario = Paths.get("LaPractica/src/laPractica/diccionario.txt");
+    private final Path diccionario = Paths.get(Constante.DICCIONARIO_TXT);
     private String palabra;
 
     public PreguntaLetras() {
