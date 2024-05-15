@@ -7,3 +7,4 @@ chip,1 - chop,0 -
 Ada_Lovelace,0 - bwn,0 - 
 serio,3 - Ada_Lovelace,2 - 
 Katherine_Johnson,5 - Hypatia,8 - Ada_Lovelace,11 - 
+Ada_Lovelace,1 - bea,2 - 

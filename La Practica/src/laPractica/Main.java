@@ -32,7 +32,7 @@ public class Main {
                         Ronda ronda = new Ronda();
                         int numRondas = ronda.menuNumRondas();
                         for (int i = 0; i < numRondas; i++) {
-                            ronda.jugarRonda(arrayJugadores);
+                            arrayJugadores= ronda.jugarRonda(arrayJugadores);
                         }
                         partida.actualizarHistorico();
                         //todo: arreglar guardado ranking

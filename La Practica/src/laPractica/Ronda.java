@@ -62,7 +62,7 @@ public class Ronda {
         return totalRondas;
     }
 
-    public void jugarRonda(ArrayList<Jugador> arrayJugadores) {
+    public ArrayList<Jugador> jugarRonda(ArrayList<Jugador> arrayJugadores) {
         for (int i = 0; i < arrayJugadores.size(); i++) {
             Jugador jugador = arrayJugadores.get(i);
             Pregunta pregunta = tipoPreguntaRandom();
@@ -70,6 +70,7 @@ public class Ronda {
             System.out.println(pregunta.enunciadoRespuesta.getEnunciado());
             jugador.elegirRespuesta(pregunta);
         }
+        return arrayJugadores;
     }
 
 }
